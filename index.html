@@ -3,19 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Conseil pour les affaires et autres conseils de gestione</title>
+    <title>Page Web Légendaire</title>
 <style>
-/* Resetting default margin and padding */
+
+    /* Réinitialiser la marge et le rembourrage par défaut */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Global styles */
+/* Styles globaux */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
+    background-color: #000000;
+    color: #FFFFFF;
 }
 
 .container {
@@ -24,26 +27,30 @@ body {
     max-width: 1200px;
 }
 
-/* Navbar styling */
+/* Style de la barre de navigation */
 .navbar {
-    background-color: #1F1F1F;
-    color: #FFFFFF;
+    background-color: transparent;
     padding: 20px 0;
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .logo {
     font-size: 1.8rem;
+    color: #FFFFFF;
 }
 
 .nav-links {
     list-style: none;
     display: flex;
-    justify-content: flex-end;
 }
 
 .nav-links li {
@@ -52,7 +59,8 @@ body {
 
 .nav-links a {
     text-decoration: none;
-    color: inherit;
+    color: #FFFFFF;
+    font-size: 1.2rem;
     transition: color 0.3s ease;
 }
 
@@ -60,29 +68,28 @@ body {
     color: #FFD700;
 }
 
-/* Hero section styling */
+/* Style de la section Hero */
 .hero {
     background-image: url('background.jpg');
     background-size: cover;
     background-position: center;
-    color: Black;
     padding: 200px 0;
     text-align: center;
 }
 
 .hero h1 {
-    font-size: 3.5rem;
+    font-size: 4.5rem;
     margin-bottom: 20px;
 }
 
 .hero p {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
 }
 
-/* Services section styling */
+/* Style de la section Services */
 .services {
-    background-color: #F4F4F4;
-    color: #333333;
+    background-color: #1F1F1F;
+    color: #FFFFFF;
     padding: 100px 0;
     text-align: center;
 }
@@ -98,19 +105,25 @@ body {
     width: 300px;
     padding: 30px;
     margin: 20px;
-    background-color: #FFFFFF;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: #333333;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.1);
     transition: transform 0.3s ease;
 }
 
 .service-card:hover {
-    transform: translateY(-10px);
+    transform: scale(1.05);
 }
 
-/* Contact section styling */
+.service-card h3 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #FFFFFF;
+}
+
+/* Style de la section Contact */
 .contact {
-    background-color: #333333;
+    background-color: #000000;
     color: #FFFFFF;
     padding: 100px 0;
     text-align: center;
@@ -123,7 +136,7 @@ body {
     padding: 15px;
     border: none;
     border-radius: 5px;
-    background-color: #1F1F1F;
+    background-color: #333333;
     color: #FFFFFF;
 }
 
@@ -146,44 +159,40 @@ body {
     background-color: #FFEC8B;
 }
 
-/* Footer styling */
+/* Style du pied de page */
 .footer {
     background-color: #1F1F1F;
     color: #FFFFFF;
     padding: 20px 0;
     text-align: center;
 }
-    
-</style>
 
+</style>
 </head>
 <body>
     <nav class="navbar">
         <div class="container">
-            <h1 class="logo">Auto-entrepreneur Ismail Helali</h1>
+            <h1 class="logo">Nom de l'Entreprise</h1>
             <ul class="nav-links">
-                <li><a href="#hero">#Home</a></li>
-                <li><a href="#services">#Services</a></li>
-                <li><a href="#contact">#Contact</a></li>
+                <li><a href="#hero">Accueil</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
         </div>
     </nav>
 
     <header id="hero" class="hero">
         <div class="container">
-            <h1>Conseil d'affaires et de gestione-</h1><br>
-            <h2>Par Ismail helali - Auto-Entrepreneur</h2>
-            <p>
-                "On ne fournit pas simplement un "conseil", on construit ensemble." 
-            </p>
+            <h1>Bienvenue sur Notre Site Web Légendaire</h1>
+            <p>Découvrez l'excellence dans chaque détail.</p>
         </div>
     </header>
 
     <section id="services" class="services">
         <div class="container">
-            <h2>Découvrez Nos Services</h2>
+            <h2>Nos Services</h2>
             <div class="service-cards">
-                <div class="service-card">
+                   <div class="service-card">
                     <h3>Diagnostic Logistique</h3>
                     <p>Description of service 1</p>
                 </div>
@@ -204,30 +213,30 @@ body {
                     <h3>Formations</h3>
                     <p>Description of service 1</p>
                 </div>
-                
-                <!-- Repeat for other services -->
+                <!-- Répéter pour les autres services -->
             </div>
         </div>
     </section>
 
     <section id="contact" class="contact">
         <div class="container">
-            <h2>Contact Us</h2>
+            <h2>Contactez-nous</h2>
             <form class="contact-form">
-                <input type="text" placeholder="Name">
+                <input type="text" placeholder="Nom">
                 <input type="email" placeholder="Email">
                 <textarea placeholder="Message"></textarea>
-                <button type="submit">Send Message</button>
+                <button type="submit">Envoyer le Message</button>
             </form>
         </div>
     </section>
 
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2024 Company Name. All rights reserved.</p>
+            <p>&copy; 2024 Nom de l'Entreprise. Tous droits réservés.</p>
         </div>
     </footer>
 
     <script src="scripts.js"></script>
 </body>
 </html>
+
