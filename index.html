@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VCF Contact Viewer</title>
+    <style>
+       /* Navbar styling */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: darkblue;
+    color: yellow;
+}
+
+/* Hero styling */
+.hero {
+    background-color: yellow;
+    color: darkblue;
+    padding: 100px 0;
+    text-align: center;
+}
+
+/* Services styling */
+.services {
+    background-color: darkblue;
+    color: yellow;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.service-box {
+    width: 20%;
+    display: inline-block;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Contact form styling */
+.contact {
+    background-color: yellow;
+    color: darkblue;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.contact input,
+.contact textarea,
+.contact button {
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.contact button {
+    background-color: darkblue;
+    color: yellow;
+    border: none;
+    cursor: pointer;
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+    .service-box {
+        width: 40%;
+    }
+}
+
+    </style>
+</head>
+<body>
+   <nav class="navbar">
+    <ul>
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+
+<section id="hero" class="hero">
+    <div class="hero-content">
+        <h1>Welcome to Our Website</h1>
+        <p>We offer top-notch services to meet your needs.</p>
+    </div>
+</section>
+
+
+  <section id="services" class="services">
+    <div class="service-box">
+        <h2>Service 1</h2>
+        <p>Description of service 1</p>
+    </div>
+    <div class="service-box">
+        <h2>Service 2</h2>
+        <p>Description of service 2</p>
+    </div>
+  <div class="service-box">
+        <h2>Service 3</h2>
+        <p>Description of service 3</p>
+    </div>
+    <div class="service-box">
+        <h2>Service 4</h2>
+        <p>Description of service 4</p>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2>Contact Us</h2>
+    <form>
+        <input type="text" placeholder="Name">
+        <input type="email" placeholder="Email">
+        <textarea placeholder="Message"></textarea>
+        <button type="submit">Send</button>
+    </form>
+</section>
+
+</body>
+</html>
