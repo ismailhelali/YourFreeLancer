@@ -3,10 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Advanced Web Page</title>
-   <style>
-
-       /* Resetting default margin and padding */
+    <title>World-Class Web Page</title>
+<style>
+/* Resetting default margin and padding */
 * {
     margin: 0;
     padding: 0;
@@ -15,40 +14,40 @@
 
 /* Global styles */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
 }
 
 .container {
-    width: 80%;
+    width: 90%;
     margin: 0 auto;
     max-width: 1200px;
 }
 
 /* Navbar styling */
 .navbar {
-    background-color: #17202A;
+    background-color: #1F1F1F;
     color: #FFFFFF;
     padding: 20px 0;
-}
-
-.navbar .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .logo {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
 }
 
 .nav-links {
     list-style: none;
     display: flex;
+    justify-content: flex-end;
 }
 
 .nav-links li {
-    margin-left: 20px;
+    margin-left: 30px;
 }
 
 .nav-links a {
@@ -58,41 +57,60 @@ body {
 }
 
 .nav-links a:hover {
-    color: #FFC300;
+    color: #FFD700;
 }
 
 /* Hero section styling */
 .hero {
-    background-color: #3498DB;
+    background-image: url('background.jpg');
+    background-size: cover;
+    background-position: center;
     color: #FFFFFF;
-    padding: 100px 0;
+    padding: 200px 0;
     text-align: center;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.2rem;
 }
 
 /* Services section styling */
 .services {
-    background-color: #2ECC71;
-    color: #FFFFFF;
-    padding: 80px 0;
+    background-color: #F4F4F4;
+    color: #333333;
+    padding: 100px 0;
+    text-align: center;
 }
 
 .service-cards {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    flex-wrap: wrap;
     margin-top: 40px;
 }
 
 .service-card {
-    width: calc(33.333% - 20px);
-    padding: 20px;
+    width: 300px;
+    padding: 30px;
+    margin: 20px;
     background-color: #FFFFFF;
-    border-radius: 5px;
-    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
 }
 
 /* Contact section styling */
 .contact {
-    background-color: #F39C12;
+    background-color: #333333;
     color: #FFFFFF;
     padding: 100px 0;
     text-align: center;
@@ -102,34 +120,42 @@ body {
 .contact-form textarea {
     width: 100%;
     margin-bottom: 20px;
-    padding: 10px;
+    padding: 15px;
     border: none;
     border-radius: 5px;
+    background-color: #1F1F1F;
+    color: #FFFFFF;
+}
+
+.contact-form textarea {
+    resize: none;
+    height: 150px;
 }
 
 .contact-form button {
-    padding: 10px 20px;
+    padding: 15px 30px;
     border: none;
     border-radius: 5px;
-    background-color: #FFFFFF;
-    color: #F39C12;
+    background-color: #FFD700;
+    color: #333333;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
 .contact-form button:hover {
-    background-color: #F1C40F;
+    background-color: #FFEC8B;
 }
 
 /* Footer styling */
 .footer {
-    background-color: #34495E;
+    background-color: #1F1F1F;
     color: #FFFFFF;
     padding: 20px 0;
     text-align: center;
 }
+    
+</style>
 
-   </style>
 </head>
 <body>
     <nav class="navbar">
@@ -145,8 +171,8 @@ body {
 
     <header id="hero" class="hero">
         <div class="container">
-            <h1>Welcome to Our Website</h1>
-            <p>We provide innovative solutions to meet your needs.</p>
+            <h1>Welcome to Our World-Class Website</h1>
+            <p>We provide innovative solutions to elevate your business.</p>
         </div>
     </header>
 
@@ -170,7 +196,7 @@ body {
                 <input type="text" placeholder="Name">
                 <input type="email" placeholder="Email">
                 <textarea placeholder="Message"></textarea>
-                <button type="submit">Send</button>
+                <button type="submit">Send Message</button>
             </form>
         </div>
     </section>
@@ -180,5 +206,7 @@ body {
             <p>&copy; 2024 Company Name. All rights reserved.</p>
         </div>
     </footer>
+
+    <script src="scripts.js"></script>
 </body>
 </html>
