@@ -4,7 +4,171 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Legendary Photography Services</title>
-    <link rel="stylesheet" href="styles.css">
+<style>
+    /* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f8f8f8; /* Light gray background */
+    color: #333333; /* Dark gray text color */
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+/* Navbar Styling */
+.navbar {
+    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black background */
+    color: #FFFFFF; /* White text color */
+    padding: 20px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 1.8rem;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end; /* Align links to the right */
+}
+
+.nav-links li {
+    margin-left: 30px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #FFFFFF;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #FFD700; /* Yellow color on hover */
+}
+
+/* Hero Section Styling */
+.hero {
+    background-image: url('hero-background.jpg'); /* Replace 'hero-background.jpg' with your image path */
+    background-size: cover;
+    background-position: center;
+    color: #FFFFFF; /* White text color */
+    padding: 200px 0;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+}
+
+/* Portfolio Section Styling */
+.portfolio {
+    background-color: #FFFFFF; /* White background */
+    color: #333333; /* Dark gray text color */
+    padding: 100px 0;
+    text-align: center;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.gallery a {
+    display: block;
+    margin: 10px;
+}
+
+.gallery img {
+    width: 100%;
+    height: auto;
+    max-width: 300px; /* Limit image width */
+}
+
+/* Progress Bar Styling */
+.progress-container {
+    width: 100%;
+    height: 4px;
+    background-color: #ddd; /* Light gray background */
+    margin-top: 20px;
+}
+
+.progress-bar {
+    width: 0;
+    height: 100%;
+    background-color: #FFD700; /* Yellow progress bar color */
+    transition: width 0.5s;
+}
+
+/* Contact Section Styling */
+.contact {
+    background-color: #333333; /* Dark gray background */
+    color: #FFFFFF; /* White text color */
+    padding: 100px 0;
+    text-align: center;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #1F1F1F; /* Dark gray form background */
+    color: #FFFFFF; /* White form text color */
+}
+
+.contact-form textarea {
+    resize: none;
+    height: 150px;
+}
+
+.contact-form button {
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    background-color: #FFD700; /* Yellow button color */
+    color: #333333; /* Dark gray button text color */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+    background-color: #FFEC8B; /* Light yellow button color on hover */
+}
+
+/* Footer Styling */
+.footer {
+    background-color: #1F1F1F; /* Dark gray background */
+    color: #FFFFFF; /* White text color */
+    padding: 20px 0;
+    text-align: center;
+}
+
+</style>
+
 </head>
 <body>
     <nav class="navbar">
