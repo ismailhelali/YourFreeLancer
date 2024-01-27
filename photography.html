@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legendary Photography Services</title>
+    <style>
+
+      /* Resetting default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Global styles */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+/* Navbar styling */
+.navbar {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #FFFFFF;
+    padding: 20px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 1.8rem;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.nav-links li {
+    margin-left: 30px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #FFFFFF;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #FFD700;
+}
+
+/* Hero section styling */
+.hero {
+    background-image: url('background.jpg');
+    background-size: cover;
+    background-position: center;
+    color: #FFFFFF;
+    padding: 200px 0;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+}
+
+/* Portfolio section styling (to be filled with images) */
+.portfolio {
+    background-color: #F4F4F4;
+    color: #333333;
+    padding: 100px 0;
+    text-align: center;
+}
+
+/* Contact section styling */
+.contact {
+    background-color: #333333;
+    color: #FFFFFF;
+    padding: 100px 0;
+    text-align: center;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #1F1F1F;
+    color: #FFFFFF;
+}
+
+.contact-form textarea {
+    resize: none;
+    height: 150px;
+}
+
+.contact-form button {
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    background-color: #FFD700;
+    color: #333333;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+    background-color: #FFEC8B;
+}
+
+/* Footer styling */
+.footer {
+    background-color: #1F1F1F;
+    color: #FFFFFF;
+    padding: 20px 0;
+    text-align: center;
+}
+
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <h1 class="logo">Photography Studio</h1>
+            <ul class="nav-links">
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header id="hero" class="hero">
+        <div class="container">
+            <h1>Welcome to Legendary Photography Services</h1>
+            <p>Capturing moments, creating memories.</p>
+        </div>
+    </header>
+
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+            <h2>Our Portfolio</h2>
+            <div id="gallery" class="gallery">
+                <!-- Links will be dynamically inserted here -->
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <form class="contact-form">
+                <input type="text" placeholder="Your Name">
+                <input type="email" placeholder="Your Email">
+                <textarea placeholder="Your Message"></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Photography Studio. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
+
+<script>
+
+  // Add photo links dynamically to the portfolio section
+const gallery = document.getElementById('gallery');
+
+// Array of photo URLs
+const photoURLs = [
+    'https://images.pexels.com/photos/20021809/pexels-photo-20021809/free-photo-of-sunsite.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    'https://images.pexels.com/photos/20021956/pexels-photo-20021956/free-photo-of-the-golden-sunset-2-3.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    'https://images.pexels.com/photos/20021841/pexels-photo-20021841/free-photo-of-sunsite.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    // Add more photo URLs as needed
+];
+
+// Function to create anchor elements and append them to the gallery
+function populateGallery() {
+    photoURLs.forEach(url => {
+        const link = document.createElement('a');
+        link.href = url;
+        link.target = '_blank'; // Open links in a new tab
+        link.textContent = 'View Photo'; // Text for the link
+        gallery.appendChild(link);
+    });
+}
+
+// Call the function to populate the gallery
+populateGallery();
+
+</script>
