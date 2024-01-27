@@ -1,3 +1,4 @@
+
 // Add photo links dynamically to the portfolio section
 const gallery = document.getElementById('gallery');
 
@@ -11,27 +12,30 @@ const photoURLs = [
 
 // Function to create anchor elements with image tags and append them to the gallery
 function populateGallery() {
-    photoURLs.forEach(url => {
+    photoURLs.forEach((url, index) => {
         const link = document.createElement('a');
         link.href = url;
         link.target = '_blank'; // Open links in a new tab
+        link.classList.add('gallery-item'); // Add class for lightbox functionality
         const img = document.createElement('img');
         img.src = url;
         img.alt = 'Photo';
         img.onload = () => updateProgressBar(); // Update progress bar on image load
         link.appendChild(img);
+        
+        // Add overlay and overlay content
+        const overlay = document.createElement('div');
+        overlay.classList.add('overlay');
+        const overlayContent = document.createElement('div');
+        overlayContent.classList.add('overlay-content');
+        overlayContent.innerHTML = `Image ${index + 1}`; // Example overlay content
+        overlay.appendChild(overlayContent);
+        link.appendChild(overlay);
+
         gallery.appendChild(link);
     });
 }
 
-// Function to update progress bar as images load
-function updateProgressBar() {
-    const progressBar = document.getElementById('progress-bar');
-    const loadedImages = gallery.querySelectorAll('img').length;
-    const totalImages = photoURLs.length;
-    const percentLoaded = (loadedImages / totalImages) * 100;
-    progressBar.style.width = percentLoaded + '%';
-}
-
 // Call the function to populate the gallery
 populateGallery();
+
