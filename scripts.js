@@ -1,4 +1,5 @@
 
+
 // Add photo links dynamically to the portfolio section
 const gallery = document.getElementById('gallery');
 
@@ -15,7 +16,6 @@ function populateGallery() {
     photoURLs.forEach((url, index) => {
         const link = document.createElement('a');
         link.href = url;
-        link.target = '_blank'; // Open links in a new tab
         link.classList.add('gallery-item'); // Add class for lightbox functionality
         const img = document.createElement('img');
         img.src = url;
@@ -36,6 +36,33 @@ function populateGallery() {
     });
 }
 
+// Function to open lightbox on image click
+function openLightbox(event) {
+    event.preventDefault(); // Prevent default link behavior
+    const clickedImage = event.target.closest('.gallery-item');
+    if (clickedImage) {
+        // Show lightbox with clicked image
+        const lightboxContent = `
+            <div class="lightbox-overlay" onclick="closeLightbox()">
+                <div class="lightbox-content">
+                    <img src="${clickedImage.href}" alt="Photo">
+                </div>
+            </div>
+        `;
+        document.body.insertAdjacentHTML('beforeend', lightboxContent);
+    }
+}
+
+// Function to close lightbox
+function closeLightbox() {
+    const lightbox = document.querySelector('.lightbox-overlay');
+    if (lightbox) {
+        lightbox.remove();
+    }
+}
+
 // Call the function to populate the gallery
 populateGallery();
 
+// Event listener to open lightbox on image click
+gallery.addEventListener('click', openLightbox);
