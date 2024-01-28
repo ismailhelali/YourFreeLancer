@@ -1,12 +1,14 @@
+
 let currentIndex = 0; // Index of the currently displayed image
 
 document.addEventListener("DOMContentLoaded", function () {
     const gallery = document.getElementById("gallery");
     const photoURLs = [
-        { url: "https://images.pexels.com/photos/20021841/pexels-photo-20021841/free-photo-of-sunsite.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2", alt: "The Golden Sunset By Ismail Helali" },
+      { url: "https://images.pexels.com/photos/20021841/pexels-photo-20021841/free-photo-of-sunsite.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2", alt: "The Golden Sunset By Ismail Helali" },
         { url: "https://images.pexels.com/photos/20021809/pexels-photo-20021809/free-photo-of-sunsite.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2", alt: "Harhoura Sunset By Ismail Helali" },
         { url: "https://images.pexels.com/photos/20021956/pexels-photo-20021956/free-photo-of-the-golden-sunset-2-3.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2", alt: "The One By Ismail Helali" },
         // Add more photo URLs and alt text as needed
+      
     ];
 
     function populateGallery() {
@@ -33,41 +35,38 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-function showLightbox(index) {
-    const lightboxContent = `
-        <div class="lightbox-overlay" onclick="closeLightbox()">
-            <div class="lightbox-content">
-                <img src="${photoURLs[index].url}" alt="${photoURLs[index].alt}">
-                <div class="navigation">
-                    <button onclick="navigate(-1)">Previous</button>
-                    <button onclick="navigate(1)">Next</button>
+    function showLightbox(index) {
+        const lightboxContent = `
+            <div class="lightbox-overlay" onclick="closeLightbox()">
+                <div class="lightbox-content">
+                    <img src="${photoURLs[index].url}" alt="${photoURLs[index].alt}">
+                    <div class="navigation">
+                        <button id="prevButton">Previous</button>
+                        <button id="nextButton">Next</button>
+                    </div>
                 </div>
             </div>
-        </div>
-    `;
-    document.body.insertAdjacentHTML("beforeend", lightboxContent);
-}
+        `;
+        document.body.insertAdjacentHTML("beforeend", lightboxContent);
 
-
-function navigate(direction) {
-    currentIndex += direction; // Update currentIndex based on direction
-    
-    // Check if currentIndex is out of bounds
-    if (currentIndex < 0) {
-        currentIndex = photoURLs.length - 1; // Loop back to the last image
-    } else if (currentIndex >= photoURLs.length) {
-        currentIndex = 0; // Loop back to the first image
+        // Attach event listeners to navigation buttons
+        document.getElementById("prevButton").addEventListener("click", () => navigate(-1));
+        document.getElementById("nextButton").addEventListener("click", () => navigate(1));
     }
-    
-    const lightbox = document.querySelector(".lightbox-overlay");
-    if (lightbox) {
-        lightbox.querySelector("img").src = photoURLs[currentIndex].url;
-        lightbox.querySelector("img").alt = photoURLs[currentIndex].alt;
+
+    function navigate(direction) {
+        currentIndex += direction; // Update currentIndex based on direction
+        if (currentIndex < 0) {
+            currentIndex = photoURLs.length - 1; // Loop back to the last image
+        } else if (currentIndex >= photoURLs.length) {
+            currentIndex = 0; // Loop back to the first image
+        }
+        const lightbox = document.querySelector(".lightbox-overlay");
+        if (lightbox) {
+            lightbox.querySelector("img").src = photoURLs[currentIndex].url;
+            lightbox.querySelector("img").alt = photoURLs[currentIndex].alt;
+        }
     }
-}
-
-
-
 
     function updateProgressBar() {
         const progressBar = document.getElementById("progress-bar");
