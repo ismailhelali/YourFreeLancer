@@ -1,14 +1,12 @@
-
 let currentIndex = 0; // Index of the currently displayed image
 
 document.addEventListener("DOMContentLoaded", function () {
     const gallery = document.getElementById("gallery");
     const photoURLs = [
-      { url: "https://images.pexels.com/photos/20021841/pexels-photo-20021841/free-photo-of-sunsite.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2", alt: "The Golden Sunset By Ismail Helali" },
-        { url: "https://images.pexels.com/photos/20021809/pexels-photo-20021809/free-photo-of-sunsite.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2", alt: "Harhoura Sunset By Ismail Helali" },
-        { url: "https://images.pexels.com/photos/20021956/pexels-photo-20021956/free-photo-of-the-golden-sunset-2-3.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2", alt: "The One By Ismail Helali" },
+        { url: "https://example.com/photo1.jpg", alt: "Photo 1" },
+        { url: "https://example.com/photo2.jpg", alt: "Photo 2" },
+        { url: "https://example.com/photo3.jpg", alt: "Photo 3" },
         // Add more photo URLs and alt text as needed
-      
     ];
 
     function populateGallery() {
@@ -41,17 +39,13 @@ document.addEventListener("DOMContentLoaded", function () {
                 <div class="lightbox-content">
                     <img src="${photoURLs[index].url}" alt="${photoURLs[index].alt}">
                     <div class="navigation">
-                        <button id="prevButton">Previous</button>
-                        <button id="nextButton">Next</button>
+                        <button id="prevButton" onclick="navigate(-1)">Previous</button>
+                        <button id="nextButton" onclick="navigate(1)">Next</button>
                     </div>
                 </div>
             </div>
         `;
         document.body.insertAdjacentHTML("beforeend", lightboxContent);
-
-        // Attach event listeners to navigation buttons
-        document.getElementById("prevButton").addEventListener("click", () => navigate(-1));
-        document.getElementById("nextButton").addEventListener("click", () => navigate(1));
     }
 
     function navigate(direction) {
