@@ -81,4 +81,4 @@ function closeLightbox() {
     if (lightbox) {
         lightbox.remove();
     }
-}
+} 
