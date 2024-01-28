@@ -1,32 +1,24 @@
-document.addEventListener("DOMContentLoaded", function () {
+    document.addEventListener("DOMContentLoaded", function () {
     const gallery = document.getElementById("gallery");
     const photoURLs = [
-    'https://images.pexels.com/photos/20021841/pexels-photo-20021841/free-photo-of-sunsite.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-    'https://images.pexels.com/photos/20021809/pexels-photo-20021809/free-photo-of-sunsite.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-    'https://images.pexels.com/photos/20021956/pexels-photo-20021956/free-photo-of-the-golden-sunset-2-3.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-    // Add more photo URLs as needed
-        // Add more photo URLs as needed
+        { url: "https://images.pexels.com/photos/20021841/pexels-photo-20021841/free-photo-of-sunsite.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2", alt: "The Golden Sunset By Ismail Helali" },
+        { url: "https://images.pexels.com/photos/20021809/pexels-photo-20021809/free-photo-of-sunsite.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2", alt: "Harhoura Sunset By Ismail Helali" },
+        { url: "https://images.pexels.com/photos/20021956/pexels-photo-20021956/free-photo-of-the-golden-sunset-2-3.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2", alt: "The One By Ismail Helali" },
+        // Add more photo URLs and alt text as needed
     ];
+    let currentIndex = 0; // Index of the currently displayed image
 
     function populateGallery() {
-        photoURLs.forEach((url, index) => {
+        photoURLs.forEach((photo, index) => {
             const link = document.createElement("a");
-            link.href = url;
+            link.href = photo.url;
             link.classList.add("gallery-item"); // Add class for lightbox functionality
+            link.dataset.index = index; // Store index in dataset for navigation
             const img = document.createElement("img");
-            img.src = url;
-            img.alt = "Photo";
+            img.src = photo.url;
+            img.alt = photo.alt; // Set alt text
             img.onload = updateProgressBar; // Update progress bar on image load
             link.appendChild(img);
-
-            const overlay = document.createElement("div");
-            overlay.classList.add("overlay");
-            const overlayContent = document.createElement("div");
-            overlayContent.classList.add("overlay-content");
-            overlayContent.innerHTML = `Image ${index + 1}`; // Example overlay content
-            overlay.appendChild(overlayContent);
-            link.appendChild(overlay);
-
             gallery.appendChild(link);
         });
     }
@@ -35,14 +27,37 @@ document.addEventListener("DOMContentLoaded", function () {
         event.preventDefault(); // Prevent default link behavior
         const clickedImage = event.target.closest(".gallery-item");
         if (clickedImage) {
-            const lightboxContent = `
-                <div class="lightbox-overlay" onclick="closeLightbox()">
-                    <div class="lightbox-content">
-                        <img src="${clickedImage.href}" alt="Photo">
+            currentIndex = parseInt(clickedImage.dataset.index); // Update currentIndex
+            showLightbox(currentIndex);
+        }
+    }
+
+    function showLightbox(index) {
+        const lightboxContent = `
+            <div class="lightbox-overlay" onclick="closeLightbox()">
+                <div class="lightbox-content">
+                    <img src="${photoURLs[index].url}" alt="${photoURLs[index].alt}">
+                    <div class="navigation">
+                        <button onclick="navigate(-1)">Previous</button>
+                        <button onclick="navigate(1)">Next</button>
                     </div>
                 </div>
-            `;
-            document.body.insertAdjacentHTML("beforeend", lightboxContent);
+            </div>
+        `;
+        document.body.insertAdjacentHTML("beforeend", lightboxContent);
+    }
+
+    function navigate(direction) {
+        currentIndex += direction; // Update currentIndex based on direction
+        if (currentIndex < 0) {
+            currentIndex = photoURLs.length - 1; // Loop back to the last image
+        } else if (currentIndex >= photoURLs.length) {
+            currentIndex = 0; // Loop back to the first image
+        }
+        const lightbox = document.querySelector(".lightbox-overlay");
+        if (lightbox) {
+            lightbox.remove();
+            showLightbox(currentIndex); // Show the updated image
         }
     }
 
