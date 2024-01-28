@@ -48,20 +48,23 @@ function showLightbox(index) {
     document.body.insertAdjacentHTML("beforeend", lightboxContent);
 }
 
-
-    function navigate(direction) {
-        currentIndex += direction; // Update currentIndex based on direction
-        if (currentIndex < 0) {
-            currentIndex = photoURLs.length - 1; // Loop back to the last image
-        } else if (currentIndex >= photoURLs.length) {
-            currentIndex = 0; // Loop back to the first image
-        }
-        const lightbox = document.querySelector(".lightbox-overlay");
-        if (lightbox) {
-            lightbox.remove();
-            showLightbox(currentIndex); // Show the updated image
-        }
+function navigate(direction) {
+    currentIndex += direction; // Update currentIndex based on direction
+    
+    // Check if currentIndex is out of bounds
+    if (currentIndex < 0) {
+        currentIndex = photoURLs.length - 1; // Loop back to the last image
+    } else if (currentIndex >= photoURLs.length) {
+        currentIndex = 0; // Loop back to the first image
     }
+    
+    const lightbox = document.querySelector(".lightbox-overlay");
+    if (lightbox) {
+        lightbox.querySelector("img").src = photoURLs[currentIndex].url;
+        lightbox.querySelector("img").alt = photoURLs[currentIndex].alt;
+    }
+}
+
 
     function updateProgressBar() {
         const progressBar = document.getElementById("progress-bar");
