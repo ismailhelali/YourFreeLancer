@@ -33,20 +33,21 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    function showLightbox(index) {
-        const lightboxContent = `
-            <div class="lightbox-overlay" onclick="closeLightbox()">
-                <div class="lightbox-content">
-                    <img src="${photoURLs[index].url}" alt="${photoURLs[index].alt}">
-                    <div class="navigation">
-                        <button onclick="navigate(-1)">Previous</button>
-                        <button onclick="navigate(1)">Next</button>
-                    </div>
+function showLightbox(index) {
+    const lightboxContent = `
+        <div class="lightbox-overlay" onclick="closeLightbox()">
+            <div class="lightbox-content">
+                <img src="${photoURLs[index].url}" alt="${photoURLs[index].alt}">
+                <div class="navigation">
+                    <button onclick="navigate(-1)">Previous</button>
+                    <button onclick="navigate(1)">Next</button>
                 </div>
             </div>
-        `;
-        document.body.insertAdjacentHTML("beforeend", lightboxContent);
-    }
+        </div>
+    `;
+    document.body.insertAdjacentHTML("beforeend", lightboxContent);
+}
+
 
     function navigate(direction) {
         currentIndex += direction; // Update currentIndex based on direction
