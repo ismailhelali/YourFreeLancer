@@ -56,5 +56,14 @@
     </footer>
 
     <script src="scripts.js"></script>
+    <script>
+        // Define closeLightbox function in the global scope for js to open and close pic 
+        function closeLightbox() {
+            const lightbox = document.querySelector(".lightbox-overlay");
+            if (lightbox) {
+                lightbox.remove();
+            }
+        }
+    </script>
 </body>
 </html>
