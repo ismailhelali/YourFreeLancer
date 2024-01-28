@@ -40,10 +40,7 @@ document.addEventListener("DOMContentLoaded", function () {
             <div class="lightbox-overlay" onclick="closeLightbox()">
                 <div class="lightbox-content">
                     <img src="${photoURLs[index].url}" alt="${photoURLs[index].alt}">
-                    <div class="navigation">
-                        <button id="prevButton" onclick="navigate(-1)">Previous</button>
-                        <button id="nextButton" onclick="navigate(1)">Next</button>
-                    </div>
+                   
                 </div>
             </div>
         `;
