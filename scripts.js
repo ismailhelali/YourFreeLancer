@@ -48,6 +48,7 @@ function showLightbox(index) {
     document.body.insertAdjacentHTML("beforeend", lightboxContent);
 }
 
+
 function navigate(direction) {
     currentIndex += direction; // Update currentIndex based on direction
     
@@ -64,6 +65,8 @@ function navigate(direction) {
         lightbox.querySelector("img").alt = photoURLs[currentIndex].alt;
     }
 }
+
+
 
 
     function updateProgressBar() {
