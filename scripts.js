@@ -1,4 +1,6 @@
-    document.addEventListener("DOMContentLoaded", function () {
+let currentIndex = 0; // Index of the currently displayed image
+
+document.addEventListener("DOMContentLoaded", function () {
     const gallery = document.getElementById("gallery");
     const photoURLs = [
         { url: "https://images.pexels.com/photos/20021841/pexels-photo-20021841/free-photo-of-sunsite.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2", alt: "The Golden Sunset By Ismail Helali" },
@@ -6,7 +8,6 @@
         { url: "https://images.pexels.com/photos/20021956/pexels-photo-20021956/free-photo-of-the-golden-sunset-2-3.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2", alt: "The One By Ismail Helali" },
         // Add more photo URLs and alt text as needed
     ];
-    let currentIndex = 0; // Index of the currently displayed image
 
     function populateGallery() {
         photoURLs.forEach((photo, index) => {
@@ -61,13 +62,6 @@
         }
     }
 
-    function closeLightbox() {
-        const lightbox = document.querySelector(".lightbox-overlay");
-        if (lightbox) {
-            lightbox.remove();
-        }
-    }
-
     function updateProgressBar() {
         const progressBar = document.getElementById("progress-bar");
         const loadedImages = gallery.querySelectorAll("img").length;
@@ -79,3 +73,10 @@
     populateGallery();
     gallery.addEventListener("click", openLightbox);
 });
+
+function closeLightbox() {
+    const lightbox = document.querySelector(".lightbox-overlay");
+    if (lightbox) {
+        lightbox.remove();
+    }
+}
