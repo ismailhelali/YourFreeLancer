@@ -219,9 +219,9 @@ body {
     border-radius: 5px;
     background-color: #FFD700; /* Yellow button color
 
-    )
+}
 
-    /* Button Styles */
+/* Button Styles */
 .cta-button {
     display: inline-block;
     padding: 12px 24px;
@@ -247,5 +247,8 @@ body {
     transform: translateY(0); /* Reset position on click */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Small shadow on click */
 }
+
+
+
 
     
