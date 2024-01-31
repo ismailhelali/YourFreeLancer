@@ -248,7 +248,15 @@ body {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Small shadow on click */
 }
 
+/* Ensure Button Styles Override */
+/* Reset conflicting styles */
+body {
+    background-color: initial;
+    color: initial;
+}
 
-
-
-    
+.container {
+    width: initial;
+    margin: initial;
+    max-width: initial;
+}
