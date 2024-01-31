@@ -9,7 +9,7 @@
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
-    background-color: Black; /* black background */
+    background-color: #000000; /* black background */
     color: #FFFFFF; /* Dark gray text color */
 }
 
@@ -20,7 +20,6 @@ body {
 }
 
 /* Navbar Styling */
-/* Style de la barre de navigation */
 .navbar {
     background-color: transparent;
     padding: 20px 0;
@@ -63,7 +62,7 @@ body {
 
 /* Hero Section Styling */
 .hero {
-    background-image: url('https://images.pexels.com/photos/20021841/pexels-photo-20021841/free-photo-of-sunsite.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'); /* Replace 'hero-background.jpg' with your image path */
+    background-image: url('https://images.pexels.com/photos/20021841/pexels-photo-20021841/free-photo-of-sunsite.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');
     background-size: cover;
     background-position: center;
     color: #FFFFFF; /* White text color */
@@ -80,12 +79,10 @@ body {
     font-size: 1.2rem;
 }
 
-
-
 /* Portfolio Section Styling */
 .portfolio {
-    background-color: black;
-    color: #FFFFFF;
+    background-color: #000000; /* Black background */
+    color: #FFFFFF; /* White text color */
     padding: 100px 0;
     text-align: center;
 }
@@ -173,7 +170,6 @@ body {
     margin: 0 auto;
 }
 
-
 /* Progress Bar Styling */
 .progress-container {
     width: 100%;
@@ -217,8 +213,7 @@ body {
     padding: 15px 30px;
     border: none;
     border-radius: 5px;
-    background-color: #FFD700; /* Yellow button color
-
+    background-color: #FFD700; /* Yellow button color */
 }
 
 /* Button Styles */
@@ -246,17 +241,4 @@ body {
 .cta-button:active {
     transform: translateY(0); /* Reset position on click */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Small shadow on click */
-}
-
-/* Ensure Button Styles Override */
-/* Reset conflicting styles */
-body {
-    background-color: initial;
-    color: initial;
-}
-
-.container {
-    width: initial;
-    margin: initial;
-    max-width: initial;
 }
