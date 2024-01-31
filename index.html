@@ -167,20 +167,33 @@ body {
     text-align: center;
 
 }
+/* Button Styles */
 .cta-button {
     display: inline-block;
     padding: 12px 24px;
-    background-color: #ffcc00; /* Yellow color */
-    color: #000000; /* Black color */
-    text-decoration: none;
-    border-radius: 5px;
     font-size: 18px;
-    transition: background-color 0.3s ease;
+    font-weight: bold;
+    color: #ffffff;
+    text-decoration: none;
+    border: none;
+    border-radius: 50px;
+    background-color: #ffcc00; /* Yellow color */
+    background-image: linear-gradient(to right, #ffcc00, #ff9933); /* Gradient */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Box shadow */
+    transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s;
 }
 
 .cta-button:hover {
     background-color: #ffdb4d; /* Lighter yellow on hover */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); /* Slightly larger shadow on hover */
+    transform: translateY(-2px); /* Move button up on hover */
 }
+
+.cta-button:active {
+    transform: translateY(0); /* Reset position on click */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Small shadow on click */
+}
+
 
 </style>
 </head>
