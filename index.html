@@ -28,6 +28,7 @@ body {
 }
 
 /* Navbar Styling */
+/* Navbar Styling */
 .navbar {
     background-color: transparent;
     padding: 20px 0;
@@ -41,24 +42,50 @@ body {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
 }
 
-.navbar .logo {
+.logo {
     font-size: 1.8rem;
     color: #FFFFFF;
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
-.navbar .nav-links {
+.hamburger-menu {
+    display: none; /* Hide by default */
+    cursor: pointer;
+}
+
+.line {
+    width: 30px;
+    height: 3px;
+    background-color: #FFFFFF;
+    margin: 5px;
+    transition: transform 0.3s, opacity 0.3s;
+}
+
+/* Rotate lines to form X shape for close icon */
+.close .line:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.close .line:nth-child(2) {
+    opacity: 0;
+}
+
+.close .line:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+.nav-links {
     list-style: none;
     display: flex;
     margin-right: 30px; /* Add right margin for better spacing */
 }
 
-.navbar .nav-links li {
+.nav-links li {
     margin-left: 20px; /* Reduce left margin for improved compactness */
 }
 
-.navbar .nav-links a {
+.nav-links a {
     text-decoration: none;
     color: #FFFFFF;
     font-size: 1.2rem;
@@ -67,39 +94,35 @@ body {
     border-radius: 5px; /* Add rounded corners */
 }
 
-.navbar .nav-links a:hover, .navbar .logo:hover {
+.nav-links a:hover, .logo:hover {
     color: #FFD700;
 }
 
 /* Adjust font sizes for small devices */
 @media only screen and (max-width: 768px) {
-    .navbar .logo {
+    .logo {
         font-size: 1.5rem;
     }
 
-    .navbar .nav-links {
+    .nav-links {
         display: none; /* Hide nav links by default on small screens */
     }
 
-    .navbar .nav-links.active {
-        display: flex; /* Show nav links when navbar is toggled */
+    .hamburger-menu {
+        display: block; /* Show hamburger menu icon for small screens */
+    }
+
+    /* Style for open/close hamburger menu */
+    .nav-links.active {
+        display: flex;
         flex-direction: column;
         position: absolute;
         top: 100%;
         left: 0;
         width: 100%;
-        background-color: #000000; /* Black background for dropdown */
+        background-color: #000000; /* Background color for dropdown */
         padding: 20px;
         z-index: 1000; /* Ensure dropdown is on top of other content */
-    }
-
-    .navbar .nav-links.active li {
-        margin-left: 0; /* Reset left margin for dropdown items */
-        margin-bottom: 15px; /* Add bottom margin for spacing */
-    }
-
-    .navbar .nav-links.active a {
-        font-size: 1.2rem; /* Adjust font size for dropdown items */
     }
 }
 
@@ -248,16 +271,22 @@ body {
 </style>
 </head>
 <body>
-    <nav class="navbar">
-        <div class="container">
-            <h1 class="logo">Ismail Helali</h1>
-            <ul class="nav-links">
-                <li><a href="#hero">Accueil</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
+<nav class="navbar">
+    <div class="container">
+        <h1 class="logo">Ismail Helali</h1>
+        <div class="hamburger-menu">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
         </div>
-    </nav>
+        <ul class="nav-links">
+            <li><a href="#hero">Accueil</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
+</nav>
+
 
     <header id="hero" class="hero">
         <div class="container">
