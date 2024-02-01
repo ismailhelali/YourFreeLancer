@@ -68,6 +68,23 @@ body {
     color: #FFD700;
 }
 
+/* Adjust font sizes for small devices */
+@media only screen and (max-width: 768px) {
+    .navbar .logo {
+        font-size: 1.5rem; /* Adjust font size for logo on smaller devices */
+    }
+
+    .navbar .nav-links li {
+        margin-left: 20px; /* Adjust margin for nav links on smaller devices */
+    }
+
+    .navbar .nav-links a {
+        font-size: 1rem; /* Adjust font size for nav links on smaller devices */
+    }
+}
+
+    
+
 /* Style de la section Hero */
 .hero {
     background-image: url('background.jpg');
@@ -85,6 +102,18 @@ body {
 .hero p {
     font-size: 1.5rem;
 }
+
+/* Adjust font sizes for small devices */
+@media only screen and (max-width: 768px) {
+    .hero h1 {
+        font-size: 3rem; /* Adjust font size for h1 on smaller devices */
+    }
+
+    .hero p {
+        font-size: 1.2rem; /* Adjust font size for p on smaller devices */
+    }
+}
+    
 
 /* Style de la section Services */
 .services {
@@ -212,8 +241,11 @@ body {
     <header id="hero" class="hero">
         <div class="container">
             <h1>On ne fournit pas un "Conseil" , On Construit ensemble</h1>
+            <p>Ismail Helali Auto-entrepreneur Marocain, Ingénieur d'état en génie industriel et Supply Chain </p>
+            <p>SPÉCIALISÉ dans le Consulting , Le Diagnostic d'entreprise et L'accompagnement.</p>
+         
+            <a href="#contact" class="cta-button">Prendre Rendezvous</a>
 
-            <p>Découvrez Nos services .</p>
         </div>
     </header>
 
@@ -222,31 +254,42 @@ body {
             <h2>Nos Services</h2>
             <div class="service-cards">
                    <div class="service-card">
-                    <h3>Diagnostic Logistique</h3>
-                    <p>Description of service 1</p>
+                    <h3>Diagnostic d'entreprise</h3>
+                    <p>
+                    <a href="/YourFreeLancer/formation" class="cta-button">Comment ca marche</a>
+                    </p>
                 </div>
                  <div class="service-card">
                     <h3>Marketing</h3>
-                    <p>Description of service 1</p>
+                    <p>
+                    <a href="/YourFreeLancer/formation" class="cta-button">create your's</a>
+                    </p>
                 </div>
                    <div class="service-card">
                     <h3>Creative writing</h3>
-                    <p>Description of service 1</p>
+                    <p>
+                    <a href="/YourFreeLancer/formation" class="cta-button">Nos publications</a>
+                    </p>
                 </div>
                  <div class="service-card">
                     <h3>Conception</h3>
-                    <p>Description of service 1</p>
+                    <p>
+                    <a href="/YourFreeLancer/formation" class="cta-button">2D and 3D</a>
+                    </p>
                 </div>
 
                  <div class="service-card">
                     <h3>Formations</h3>
-                    <p>Description of service 1</p>
+                    <p>
+                    <a href="/YourFreeLancer/formation" class="cta-button">Nos fOrmations</a>
+                    </p>
                 </div>
 
                     <div class="service-card">
                     <h3>Photography</h3>
                     <p>
-                <a href="/YourFreeLancer/photography" class="cta-button">En savoir Plus </a>
+                    <a href="/YourFreeLancer/photography" class="cta-button">Portfolio</a>
+                    </p>
                 </div>
                 <!-- Répéter pour les autres services -->
             </div>
