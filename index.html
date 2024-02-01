@@ -27,7 +27,7 @@ body {
     max-width: 1200px;
 }
 
-/* Style de la barre de navigation */
+/* Navbar Styling */
 .navbar {
     background-color: transparent;
     padding: 20px 0;
@@ -35,51 +35,50 @@ body {
     width: 100%;
     top: 0;
     z-index: 1000;
-}
-
-.navbar .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.logo {
+.navbar .logo {
     font-size: 1.8rem;
     color: #FFFFFF;
+    text-decoration: none;
+    transition: color 0.3s ease;
 }
 
-.nav-links {
+.navbar .nav-links {
     list-style: none;
     display: flex;
 }
 
-.nav-links li {
+.navbar .nav-links li {
     margin-left: 30px;
 }
 
-.nav-links a {
+.navbar .nav-links a {
     text-decoration: none;
     color: #FFFFFF;
     font-size: 1.2rem;
     transition: color 0.3s ease;
 }
 
-.nav-links a:hover {
+.navbar .nav-links a:hover, .navbar .logo:hover {
     color: #FFD700;
 }
 
 /* Adjust font sizes for small devices */
 @media only screen and (max-width: 768px) {
     .navbar .logo {
-        font-size: 1.5rem; /* Adjust font size for logo on smaller devices */
+        font-size: 1.5rem;
     }
 
     .navbar .nav-links li {
-        margin-left: 20px; /* Adjust margin for nav links on smaller devices */
+        margin-left: 20px;
     }
 
     .navbar .nav-links a {
-        font-size: 1rem; /* Adjust font size for nav links on smaller devices */
+        font-size: 1rem;
     }
 }
 
@@ -241,8 +240,7 @@ body {
     <header id="hero" class="hero">
         <div class="container">
             <h1>On ne fournit pas un "Conseil" , On Construit ensemble</h1>
-            <p>Ismail Helali Auto-entrepreneur Marocain, Ingénieur d'état en génie industriel et Supply Chain </p>
-            <p>SPÉCIALISÉ dans le Consulting , Le Diagnostic d'entreprise et L'accompagnement.</p>
+            <p>Ismail Helali, Auto-entrepreneur et Ingénieur spécialisé en consulting, diagnostic et accompagnement d'entreprises.</p>
          <br>
             <a href="#contact" class="cta-button">Prendre Rendezvous</a>
 
@@ -256,39 +254,33 @@ body {
                    <div class="service-card">
                     <h3>Diagnostic d'entreprise</h3>
                     <p>
-                    <a href="/YourFreeLancer/formation" class="cta-button">Comment ca marche</a>
                     </p>
                 </div>
                  <div class="service-card">
                     <h3>Marketing</h3>
                     <p>
-                    <a href="/YourFreeLancer/formation" class="cta-button">create your's</a>
                     </p>
                 </div>
                    <div class="service-card">
                     <h3>Creative writing</h3>
                     <p>
-                    <a href="/YourFreeLancer/formation" class="cta-button">Nos publications</a>
                     </p>
                 </div>
                  <div class="service-card">
                     <h3>Conception</h3>
                     <p>
-                    <a href="/YourFreeLancer/formation" class="cta-button">2D and 3D</a>
                     </p>
                 </div>
 
                  <div class="service-card">
                     <h3>Formations</h3>
                     <p>
-                    <a href="/YourFreeLancer/formation" class="cta-button">Nos fOrmations</a>
                     </p>
                 </div>
 
                     <div class="service-card">
                     <h3>Photography</h3>
                     <p>
-                    <a href="/YourFreeLancer/photography" class="cta-button">Portfolio</a>
                     </p>
                 </div>
                 <!-- Répéter pour les autres services -->
