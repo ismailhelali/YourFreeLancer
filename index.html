@@ -49,36 +49,9 @@ body {
     transition: color 0.3s ease;
 }
 
-.hamburger-menu {
-    display: none; /* Hide by default */
-    cursor: pointer;
-}
-
-.line {
-    width: 30px;
-    height: 3px;
-    background-color: #FFFFFF;
-    margin: 5px;
-    transition: transform 0.3s, opacity 0.3s;
-}
-
-/* Rotate lines to form X shape for close icon */
-.close .line:nth-child(1) {
-    transform: rotate(-45deg) translate(-5px, 6px);
-}
-
-.close .line:nth-child(2) {
-    opacity: 0;
-}
-
-.close .line:nth-child(3) {
-    transform: rotate(45deg) translate(-5px, -6px);
-}
-
 .nav-links {
     list-style: none;
     display: flex;
-    margin-right: 30px; /* Add right margin for better spacing */
 }
 
 .nav-links li {
@@ -98,32 +71,34 @@ body {
     color: #FFD700;
 }
 
-/* Adjust font sizes for small devices */
-@media only screen and (max-width: 768px) {
-    .logo {
-        font-size: 1.5rem;
-    }
+/* Dropdown Menu Styling */
+.dropdown {
+    position: relative;
+}
 
-    .nav-links {
-        display: none; /* Hide nav links by default on small screens */
-    }
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #000000;
+    min-width: 160px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    z-index: 1;
+}
 
-    .hamburger-menu {
-        display: block; /* Show hamburger menu icon for small screens */
-    }
+.dropdown-content a {
+    color: #FFFFFF;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
 
-    /* Style for open/close hamburger menu */
-    .nav-links.active {
-        display: flex;
-        flex-direction: column;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background-color: #000000; /* Background color for dropdown */
-        padding: 20px;
-        z-index: 1000; /* Ensure dropdown is on top of other content */
-    }
+.dropdown-content a:hover {
+    background-color: #FFD700;
+    color: #000000;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
 }
 
 
@@ -274,18 +249,21 @@ body {
 <nav class="navbar">
     <div class="container">
         <h1 class="logo">Ismail Helali</h1>
-        <div class="hamburger-menu">
-            <div class="line"></div>
-            <div class="line"></div>
-            <div class="line"></div>
-        </div>
         <ul class="nav-links">
             <li><a href="#hero">Accueil</a></li>
-            <li><a href="#services">Services</a></li>
+            <li class="dropdown">
+                <a href="#" class="dropbtn">Services</a>
+                <div class="dropdown-content">
+                    <a href="#">Diagnostic</a>
+                    <a href="#">photography</a>
+                    <a href="#">Service 3</a>
+                </div>
+            </li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </div>
 </nav>
+
 
 
     <header id="hero" class="hero">
