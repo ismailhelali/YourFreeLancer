@@ -36,46 +36,32 @@ body {
     width: 100%;
     top: 0;
     z-index: 1000;
-    display: flex;
-    align-items: center; /* Align items vertically */
-    justify-content: space-between; /* Distribute items evenly */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
-}
-
-.logo-container {
-    display: flex;
-    align-items: center; /* Align items vertically */
-}
-
-.logo {
-    font-size: 2rem; /* Increase font size for the logo */
-    color: #FFFFFF;
-    text-decoration: none;
-    transition: color 0.3s ease;
-    margin-right: 20px; /* Add margin for spacing between logo and nav links */
 }
 
 .nav-links {
     list-style: none;
+    margin: 0;
+    padding: 0;
     display: flex;
-    align-items: center; /* Align items vertically */
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-size: 1.5rem;
+    color: #FFFFFF;
+    margin: 0; /* Remove margin for better mobile layout */
 }
 
 .nav-links li {
-    margin-left: 20px; /* Reduce left margin for improved compactness */
+    margin-left: 20px;
 }
 
 .nav-links a {
     text-decoration: none;
     color: #FFFFFF;
-    font-size: 1.2rem;
+    font-size: 1rem; /* Reduce font size for better mobile display */
     transition: color 0.3s ease;
-    padding: 8px 12px; /* Add padding for better touch accessibility */
-    border-radius: 5px; /* Add rounded corners */
-}
-
-.nav-links a:hover, .logo:hover {
-    color: #FFD700;
 }
 
 /* Dropdown Menu Styling */
@@ -108,6 +94,30 @@ body {
     display: block;
 }
 
+/* Media query for mobile devices */
+@media screen and (max-width: 768px) {
+    .nav-links {
+        flex-direction: column;
+        align-items: flex-start;
+        position: absolute;
+        top: 70px; /* Adjust top position for proper alignment */
+        left: 0;
+        width: 100%;
+        background-color: #000000; /* Change background color for better visibility */
+        padding: 20px;
+    }
+
+    .nav-links li {
+        margin: 10px 0; /* Add vertical margin for better spacing */
+    }
+
+    .dropdown-content {
+        min-width: 100%; /* Set full width for dropdown on mobile */
+        left: 0;
+    }
+}
+
+
 /* Style de la section Hero */
 .hero {
     background-image: url('background.jpg');
@@ -118,7 +128,7 @@ body {
 }
 
 .hero h1 {
-    font-size: 4.2rem;
+    font-size: 4.1rem;
     margin-bottom: 20px;
 }
 
