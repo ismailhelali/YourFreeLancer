@@ -43,7 +43,7 @@ body {
     margin: 0;
     padding: 0;
     display: flex;
-    align-items: left; /* Corrected alignment property */
+    align-items: center;
     justify-content: space-between;
 }
 
@@ -55,10 +55,16 @@ body {
 }
 
 .nav-links li {
-    margin-left: 0px; /* Removed unnecessary left margin */
+    margin-left: 0px;
+    margin-right: 20px; /* Add margin to the right of each menu item */
 }
 
-.nav-links a:hover, .logo:hover {
+.nav-links li:last-child {
+    margin-right: 0; /* Remove margin from the last menu item */
+}
+
+.nav-links a:hover,
+.logo:hover {
     color: #FFD700;
 }
 
@@ -79,7 +85,7 @@ body {
     position: absolute;
     background-color: #000000;
     min-width: 160px;
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
     z-index: 1;
     opacity: 0; /* Hide dropdown by default */
     transition: opacity 0.3s ease; /* Smooth fade-in transition */
@@ -133,7 +139,6 @@ body {
         background-color: #000000;
     }
 }
-
 
 /* Style de la section Hero */
 .hero {
