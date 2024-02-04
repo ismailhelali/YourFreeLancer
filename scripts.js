@@ -7,6 +7,12 @@ document.addEventListener("DOMContentLoaded", function () {
         { url: "https://images.pexels.com/photos/20021841/pexels-photo-20021841/free-photo-of-sunsite.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2", alt: "The Golden Sunset By Ismail Helali" },
         { url: "https://images.pexels.com/photos/20021809/pexels-photo-20021809/free-photo-of-sunsite.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2", alt: "Harhoura Sunset By Ismail Helali" },
         { url: "https://images.pexels.com/photos/20021956/pexels-photo-20021956/free-photo-of-the-golden-sunset-2-3.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2", alt: "The One By Ismail Helali" },
+        { url: "https://raw.githubusercontent.com/ismailhelali/YourFreeLancer/main/20240204165611_IMG_2378%401356438735.JPG", alt: "Kasbat el oudaya  By Ismail Helali" },
+        { url: "https://raw.githubusercontent.com/ismailhelali/YourFreeLancer/main/20240204173256_IMG_2410%40-389328882.JPG", alt: "Kasbat el oudaya  By Ismail Helali" },
+        { url: "https://raw.githubusercontent.com/ismailhelali/YourFreeLancer/main/20240204173943_IMG_2417%40347487888.JPG", alt: "Kasbat el oudaya  By Ismail Helali" },
+        { url: "https://raw.githubusercontent.com/ismailhelali/YourFreeLancer/main/20240204181132_IMG_2468%40-129854351.JPG", alt: "Kasbat el oudaya  By Ismail Helali" },
+
+        
         // Add more photo URLs and alt text as needed
        
     ];
