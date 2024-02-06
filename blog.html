@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ismail Helali Blog</title>
+    <title>Text File Viewer</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -34,28 +34,23 @@
 </head>
 <body>
     <div class="container">
-        <h1>Google Docs Viewer</h1>
+        <h1>Text File Viewer</h1>
         <div id="documentContainer"></div>
     </div>
 
     <script>
-        var links = [
-            'https://docs.google.com/document/d/1n0MQvI3OY9Ox6m8f2BO-TXGNmLGGSGIDyCO4zvTzKkU/edit?usp=drivesdk',
-            'https://docs.google.com/document/d/1n0MQvI3OY9Ox6m8f2BO-TXGNmLGGSGIDyCO4zvTzKkU/edit?usp=drivesdk',
-            // Add more document links as needed
-        ];
+        var fileNames = ['supplyvalue.txt', 'file2.txt']; // Array of file names
 
         document.addEventListener('DOMContentLoaded', function() {
-            displayDocuments();
+            displayTextFiles();
         });
 
-        function displayDocuments() {
+        function displayTextFiles() {
             var documentContainer = document.getElementById('documentContainer');
             documentContainer.innerHTML = '';
 
-            links.forEach(link => {
-                var apiUrl = link;
-                fetch(apiUrl)
+            fileNames.forEach(name => {
+                fetch(name)
                     .then(response => response.text())
                     .then(data => {
                         var documentItem = document.createElement('div');
