@@ -276,7 +276,7 @@ body {
 }
 
 .inline a {
-    color: white; /* Default text color */
+    color: #7FFFD4; /* Default text color */
     text-decoration: none; /* Remove default underline */
 }
 
@@ -285,6 +285,37 @@ body {
     text-decoration: underline; /* Underline on hover */
 }
 
+.profile {
+    position: relative; /* Make the container position relative */
+    display: inline-block; /* Allow inline positioning */
+}
+
+.profile img {
+    width: 150px; /* Adjust the width of the image */
+    height: 150px; /* Adjust the height of the image */
+    border-radius: 50%; /* Make the image circular */
+    transition: transform 0.3s ease; /* Add a smooth transition effect */
+}
+
+.quote {
+    position: absolute; /* Position the quote absolutely */
+    top: 50%; /* Align quote to the center vertically */
+    left: 50%; /* Align quote to the center horizontally */
+    transform: translate(-50%, -50%); /* Center the quote precisely */
+    opacity: 0; /* Initially hide the quote */
+    background-color: rgba(255, 255, 255, 0.7); /* Transparent background */
+    padding: 10px; /* Add padding around the quote */
+    border-radius: 5px; /* Add border radius to the quote */
+    transition: opacity 0.3s ease; /* Add transition effect for opacity */
+}
+
+.profile:hover img {
+    transform: scale(1.1); /* Enlarge the image on hover */
+}
+
+.profile:hover .quote {
+    opacity: 1; /* Show the quote on hover */
+}
 
 </style>
 </head>
@@ -313,7 +344,6 @@ body {
     <header id="hero" class="hero">
         <div class="container">
             <h2>Ismail Helali is a Supply Chain Engineer living in Rabat, Morocco.</h2>
-            <p>On ne fournit pas un "Conseil" , On Construit ensemble</p>
             <br>
 <div class="inline">
     <a href="#contact">Get in touch</a>
@@ -325,7 +355,7 @@ body {
 
     <section id="services" class="services">
         <div class="container">
-            <h2>Ismail Helali</h2>
+            <h2>Services Auto-Entrepreneur</h2>
             <div class="service-cards">
                    <div class="service-card">
                     <h3>Diagnostic d'entreprise</h3>
@@ -364,6 +394,13 @@ body {
         </div>
     </section>
 
+    
+<div class="profile">
+    <img src="ihttps://raw.githubusercontent.com/ismailhelali/YourFreeLancer/main/IMG_0492.JPG" alt="Ismail Helali">
+    <h2 class="quote">On ne fournit pas un "Conseil", On Construit ensemble - Ismail Helali</h2>
+</div>
+
+    
     <section id="contact" class="contact">
         <div class="container">
             <h2>Contactez-nous</h2>
