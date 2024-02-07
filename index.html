@@ -288,25 +288,31 @@ body {
 .profile {
     position: relative;
     display: inline-block;
+    width: 200px; /* Set the width of the profile container */
 }
 
 .profile img {
-    max-width: 100%; /* Ensure image doesn't exceed container width */
+    width: 100%; /* Make the image fill the container width */
     height: auto; /* Maintain aspect ratio */
-    border-radius: 50%;
+    border-radius: 5px; /* Adjust border radius as needed */
     transition: transform 0.3s ease;
 }
 
 .quote {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    top: 0;
+    left: 0;
+    width: 100%; /* Make the quote width the same as the container */
+    height: 100%; /* Make the quote height the same as the container */
     opacity: 0;
     background-color: rgba(255, 255, 255, 0.7);
     padding: 10px;
     border-radius: 5px;
     transition: opacity 0.3s ease;
+    display: flex; /* Use flexbox to center content */
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    text-align: center; /* Center text */
 }
 
 .profile:hover img {
@@ -316,6 +322,7 @@ body {
 .profile:hover .quote {
     opacity: 1;
 }
+
 
 </style>
 </head>
