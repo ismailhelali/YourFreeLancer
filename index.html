@@ -285,54 +285,51 @@ body {
     text-decoration: underline; /* Underline on hover */
 }
 
-
-.profile {
+.profile-container {
     position: relative;
-    display: grid;
-    place-items: center;
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+    transition: background-color 0.3s ease; /* Add transition effect for background color */
 }
 
-.profile img {
-    width: 400px;
-    height: auto;
+.profile-container:hover {
+    background-color: #f0f0f0; /* Change background color on hover */
+}
+
+.profile-container .profile {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.profile-container .profile img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.quote {
-    top: 0;
-    left: 0;
-    width: 400px;
-    height: auto;
-    opacity: 0;
-    background-color: rgba(255, 255, 255, 0.9);
+.profile-container .quote {
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
     padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9);
     border-radius: 10px;
-    display: grid;
-    place-items: center;
+    display: none;
     transition: opacity 0.3s ease;
 }
 
-.profile:hover img {
-    transform: scale(1.1);
-    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
-}
-
-.profile:hover .quote {
+.profile-container:hover .quote {
+    display: block;
     opacity: 1;
 }
 
-.profile:hover img,
-.profile:hover .quote {
-    transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
-}
-
-@media screen and (max-width: 768px) {
-    .profile img {
-        width: 150px;
-        height: 150px;
-    }
-}
 
 </style>
 </head>
@@ -411,13 +408,12 @@ body {
         </div>
     </section>
 
-    
-<div class="profile">
-    <img src="https://raw.githubusercontent.com/ismailhelali/YourFreeLancer/main/IMG_0492.JPG" alt="Ismail Helali">
-    <h2 class="quote">On ne fournit pas un "Conseil", On Construit ensemble - Ismail Helali</h2>
+<div class="profile-container">
+    <div class="profile">
+        <img src="https://raw.githubusercontent.com/ismailhelali/YourFreeLancer/main/IMG_0492.JPG" alt="Ismail Helali">
+    </div>
+    <div class="quote">On ne fournit pas un "Conseil", On Construit ensemble - Ismail Helali</div>
 </div>
-
-
     
     <section id="contact" class="contact">
         <div class="container">
