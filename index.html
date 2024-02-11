@@ -422,7 +422,7 @@ body {
             <h2>Contact</h2>
 
 <form id="myForm" class="contact-form">
-  <input type="text" name="nom" placeholder="Name">
+  <input type="text" name="fullname" placeholder="Nom et prenom">
   <input type="email" name="email" placeholder="Email">
   <textarea name="message" placeholder="Message"></textarea>
   <button type="submit">Envoyer le Message</button>
@@ -437,22 +437,24 @@ body {
 document.getElementById('myForm').addEventListener('submit', function(e) {
   e.preventDefault();
   var formData = new FormData(this);
-  fetch('https://script.google.com/macros/s/AKfycbyZZ_8xVIPtVfz0PSWjyx8QEz4Vlb8m9uoMf7_fmz7o2PrAxl77BdskOXpup5Ro_m5tEw/exec', {
-    method: 'POST',
-    body: formData
-  })
-  .then(response => {
-    if (response.ok) {
-      alert('Form submitted successfully');
-      // Optionally, clear the form fields after successful submission
-      document.getElementById('myForm').reset();
-    } else {
-      alert('Error submitting form');
+  try {
+      const response = await fetch("https://script.google.com/macros/s/AKfycbwwutCZa0RuEemi22TCp3Zq3pGJzymR2oD_JW-b0t9CA3xijxaUNWapRGA913_FPImZsQ/exec", {
+        method: "POST",
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: new URLSearchParams(formData).toString(),
+      });
+      const result = await response.json();
+
+      if (result.result === 'success') {
+         console.log(dict?.form.success);
+      } else {
+         console.log("Oops! Something went wrong. Please try again later.");
+      }
+    } catch (error) {
+      console.log("Oops! Something went wrong. Please try again later.");
     }
-  })
-  .catch(error => {
-    console.error('Error:', error);
-  });
 });
 </script>
     
