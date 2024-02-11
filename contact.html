@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Form</title>
+<style>
+  .error { color: red; }
+</style>
+</head>
+<body>
+
+<h2>Contact Form</h2>
+<form id="contactForm">
+  <label for="fullname">Full Name:</label><br>
+  <input type="text" id="fullname" name="fullname"><br>
+  <span id="fullnameError" class="error"></span><br>
+
+  <label for="email">Email:</label><br>
+  <input type="email" id="email" name="email"><br>
+  <span id="emailError" class="error"></span><br>
+
+  <label for="message">Message:</label><br>
+  <textarea id="message" name="message"></textarea><br>
+  <span id="messageError" class="error"></span><br>
+
+  <input type="submit" value="Submit">
+</form>
+
+<script>
+document.getElementById('contactForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  clearErrors();
+
+  const fullname = document.getElementById('fullname').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const message = document.getElementById('message').value.trim();
+
+  let isValid = true;
+
+  if (fullname === '') {
+    displayError('fullname', 'Please enter your full name');
+    isValid = false;
+  }
+
+  if (email === '' || !isValidEmail(email)) {
+    displayError('email', 'Please enter a valid email address');
+    isValid = false;
+  }
+
+  if (message === '') {
+    displayError('message', 'Please enter your message');
+    isValid = false;
+  }
+
+  if (isValid) {
+    sendData(fullname, email, message);
+  }
+});
+
+function isValidEmail(email) {
+  // Simple email validation regex
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+}
+
+function displayError(fieldId, errorMessage) {
+  document.getElementById(fieldId + 'Error').textContent = errorMessage;
+}
+
+function clearErrors() {
+  document.querySelectorAll('.error').forEach(error => error.textContent = '');
+}
+
+function sendData(fullname, email, message) {
+  const formData = new FormData();
+  formData.append('fullname', fullname);
+  formData.append('email', email);
+  formData.append('message', message);
+
+  fetch('https://script.google.com/macros/s/AKfycbxLJmaFp20FlUA7WNCkMoc0jY19vDH2TFXnKrtzjcY4o2V7nZvSi_L59c3daB6xgd0avQ/exec', {
+    method: 'POST',
+    body: formData
+  })
+  .then(response => {
+    if (response.ok) {
+      alert('Form submitted successfully');
+      document.getElementById('contactForm').reset();
+    } else {
+      throw new Error('Error submitting form');
+    }
+  })
+  .catch(error => {
+    console.error('Error:', error);
+    alert('Oops! Something went wrong. Please try again later.');
+  });
+}
+
+  
+</script>
+</body>
+</html>
