@@ -35,6 +35,7 @@ body {
     align-items: centre;
     flex-wrap: wrap;
     margin-top: 40px;
+    margin: auto;
 }
 
 .service-card {
