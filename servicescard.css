@@ -1,3 +1,18 @@
+/* Styles globaux */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background-color: #000000;
+    color: #FFFFFF;
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+
 /* Style de la section Services */
 .services {
     background-color: #1F1F1F;
@@ -39,16 +54,3 @@
     box-sizing: border-box;
 }
 
-/* Styles globaux */
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.6;
-    background-color: #000000;
-    color: #FFFFFF;
-}
-
-.container {
-    width: 90%;
-    margin: 0 auto;
-    max-width: 1200px;
-}
