@@ -1,4 +1,4 @@
-    /* Réinitialiser la marge et le rembourrage par défaut */
+/* Réinitialiser la marge et le rembourrage par défaut */
 * {
     margin: 0;
     padding: 0;
@@ -30,28 +30,14 @@ body {
 
 .service-cards {
     display: flex;
-    flex-direction: column;
-    justify-content: center; /* Center-align cards horizontally */
-    align-items: centre;
+    flex-direction: row; /* Change to row to display one card per row */
     flex-wrap: wrap;
+    justify-content: center; /* Center-align cards horizontally */
     margin-top: 40px;
-    margin: auto;
 }
 
 .service-card {
-    width: 50%; /* Default width for larger screens */
-}
-
-/* Media query for screens smaller than 768px (typical mobile screens) */
-@media (max-width: 767px) {
-    .service-card {
-        width: 100%; /* Set width to 100% for mobile screens */
-    }
-}
-
-
-.service-card {
-    
+    width: 40%; /* Adjust the width for larger screens */
     padding: 30px;
     margin: 20px;
     background-color: #333333;
@@ -69,5 +55,3 @@ body {
     margin-bottom: 20px;
     color: #FFFFFF;
 }
-
-
