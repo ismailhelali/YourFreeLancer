@@ -42,14 +42,14 @@ body {
 }
 
 .service-card {
-    width: 50%; /* Adjust the width for larger screens */
+    width: 80%; /* Adjust the width for larger screens */
     padding: 30px;
     margin: 20px auto; /* Equal margin on top and bottom, auto left and right */
     background-color: #333333;
     border-radius: 20px;
     box-shadow: 0 10px 20px rgba(255, 255, 255, 0.1);
     transition: transform 0.3s ease;
-    max-width: 400px; /* Limit maximum width for larger screens */
+    max-width: 767px; /* Limit maximum width for larger screens */
 }
 
 .service-card:hover {
