@@ -31,7 +31,8 @@ body {
 .service-cards {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: center; /* Center-align cards horizontally */
+    align-items: left;
     flex-wrap: wrap;
     margin-top: 40px;
 }
