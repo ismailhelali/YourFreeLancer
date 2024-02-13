@@ -28,8 +28,10 @@ function afficherServices() {
         const serviceElement = document.createElement('div');
         serviceElement.classList.add('service');
         serviceElement.innerHTML = `
+        <div class="service-card">
             <h3>${service.titre}</h3>
             <p>${service.description}</p>
+            </div>
         `;
         container.appendChild(serviceElement);
     });
