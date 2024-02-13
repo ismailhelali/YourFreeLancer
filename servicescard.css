@@ -20,6 +20,7 @@ body {
 .container {
     width: 90%;
     max-width: 1200px;
+    margin: 0 auto; /* Center the container horizontally */
 }
 
 /* Style de la section Services */
@@ -41,7 +42,7 @@ body {
 .service-card {
     width: 40%; /* Adjust the width for larger screens */
     padding: 30px;
-    margin: 30% auto; /* Equal margin on top and bottom, auto left and right */
+    margin: 20px auto; /* Equal margin on top and bottom, auto left and right */
     background-color: #333333;
     border-radius: 20px;
     box-shadow: 0 10px 20px rgba(255, 255, 255, 0.1);
