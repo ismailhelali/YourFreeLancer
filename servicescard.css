@@ -38,10 +38,11 @@ body {
     flex-wrap: wrap;
     justify-content: center; /* Center-align cards horizontally */
     margin-top: 40px;
+    width:90%;
 }
 
 .service-card {
-    width: 40%; /* Adjust the width for larger screens */
+    width: 50%; /* Adjust the width for larger screens */
     padding: 30px;
     margin: 20px auto; /* Equal margin on top and bottom, auto left and right */
     background-color: #333333;
