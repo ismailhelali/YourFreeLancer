@@ -34,7 +34,7 @@ body {
     flex-direction: row; /* Display cards in a row */
     flex-wrap: wrap;
     justify-content: center; /* Center-align cards horizontally */
-    margin-top: 40px;
+    margin: 40px auto;
     width: 100%;
 }
 
