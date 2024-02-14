@@ -9,7 +9,7 @@ function menu() {
     const ul = document.createElement('ul');
     ul.classList.add('nav-links');
 
-    // Create li elements and append them to ul
+    // Create menu items and append them to ul
     const menus = [
         {
             titre: "Ismail Helali",
@@ -23,7 +23,7 @@ function menu() {
         },
         {
             titre: "Services",
-            class: "dropbtn",
+            class: "dropdown",
             link: [
                 { text: "Accompagnement", url: "/YourFreeLancer/Diagnostic_accompagnement" },
                 { text: "Marketing", url: "/YourFreeLancer/marketing" },
@@ -41,19 +41,13 @@ function menu() {
     menus.forEach(menuItem => {
         const li = document.createElement('li');
         li.classList.add(menuItem.class);
-        
-        if (menuItem.titre) {
-            const a = document.createElement('a');
-            a.setAttribute('href', menuItem.link);
-            a.textContent = menuItem.titre;
-            li.appendChild(a);
-        } else if (menuItem.class === "dropdown") {
-            const a = document.createElement('a');
-            a.setAttribute('href', '#');
-            a.classList.add('dropbtn');
-            a.textContent = menuItem.titre;
-            li.appendChild(a);
 
+        const a = document.createElement('a');
+        a.setAttribute('href', menuItem.link);
+        a.textContent = menuItem.titre;
+        li.appendChild(a);
+
+        if (menuItem.class === "dropdown") {
             const div = document.createElement('div');
             div.classList.add('dropdown-content');
             menuItem.link.forEach(item => {
@@ -63,8 +57,6 @@ function menu() {
                 div.appendChild(a);
             });
             li.appendChild(div);
-        } else {
-            li.innerHTML = menuItem.link;
         }
 
         ul.appendChild(li);
@@ -75,6 +67,15 @@ function menu() {
 
     // Append navbar to the menu div
     container.appendChild(navbar);
+
+    // JavaScript for dropdown functionality
+    const dropdown = document.querySelector('.dropdown');
+    dropdown.addEventListener('mouseenter', function() {
+        this.querySelector('.dropdown-content').style.display = 'block';
+    });
+    dropdown.addEventListener('mouseleave', function() {
+        this.querySelector('.dropdown-content').style.display = 'none';
+    });
 }
 
 // Call the menu function when the DOM content is loaded
