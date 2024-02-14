@@ -1,6 +1,34 @@
+const menus = [
+    {
+        titre: "Ismail Helali",
+        class: "logo",
+        link: "/YourFreeLancer/"
+    },
+    {
+        titre: "Accueil",
+        class: "li",
+        link: "/YourFreeLancer/"
+    },
+    {
+        titre: "Services",
+        class: "dropdown",
+        link: [
+            { text: "Accompagnement", url: "/YourFreeLancer/Diagnostic_accompagnement" },
+            { text: "Marketing", url: "/YourFreeLancer/marketing" },
+            { text: "Photography", url: "/YourFreeLancer/photography" },
+            { text: "Articles", url: "/YourFreeLancer/blog" }
+        ]
+    },
+    {
+        titre: "Contact",
+        class: "li",
+        link: "#contact"
+    }
+];
+
+const container = document.getElementById('menu');
+
 function menu() {
-    const container = document.getElementById('menu');
-    
     // Create navbar element
     const navbar = document.createElement('nav');
     navbar.classList.add('navbar');
@@ -10,34 +38,6 @@ function menu() {
     ul.classList.add('nav-links');
 
     // Create menu items and append them to ul
-    const menus = [
-        {
-            titre: "Ismail Helali",
-            class: "logo",
-            link: "/YourFreeLancer/"
-        },
-        {
-            titre: "Accueil",
-            class: "li",
-            link: "/YourFreeLancer/"
-        },
-        {
-            titre: "Services",
-            class: "dropdown",
-            link: [
-                { text: "Accompagnement", url: "/YourFreeLancer/Diagnostic_accompagnement" },
-                { text: "Marketing", url: "/YourFreeLancer/marketing" },
-                { text: "Photography", url: "/YourFreeLancer/photography" },
-                { text: "Articles", url: "/YourFreeLancer/blog" }
-            ]
-        },
-        {
-            titre: "Contact",
-            class: "li",
-            link: "#contact"
-        }
-    ];
-
     menus.forEach(menuItem => {
         const li = document.createElement('li');
         li.classList.add(menuItem.class);
@@ -67,15 +67,6 @@ function menu() {
 
     // Append navbar to the menu div
     container.appendChild(navbar);
-
-    // JavaScript for dropdown functionality
-    const dropdown = document.querySelector('.dropdown');
-    dropdown.addEventListener('mouseenter', function() {
-        this.querySelector('.dropdown-content').style.display = 'block';
-    });
-    dropdown.addEventListener('mouseleave', function() {
-        this.querySelector('.dropdown-content').style.display = 'none';
-    });
 }
 
 // Call the menu function when the DOM content is loaded
