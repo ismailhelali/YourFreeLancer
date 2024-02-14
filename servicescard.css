@@ -33,6 +33,19 @@ body {
     margin: 20px auto; /* Equal margin on top and bottom, auto left and right */
 }
 
+
+.services {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.services h2,
+.services div,
+.services h3 {
+    text-align: center;
+}
+
 .service-cards {
     display: flex;
     flex-direction: row; /* Display cards in a row */
