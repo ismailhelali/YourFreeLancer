@@ -30,6 +30,7 @@ body {
     padding: 100px 0;
     text-align: center;
     width:100%;
+    margin: 20px auto; /* Equal margin on top and bottom, auto left and right */
 }
 
 .service-cards {
