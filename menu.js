@@ -24,14 +24,12 @@ function menu() {
         {
             titre: "Services",
             class: "dropdown",
-            link: `
-                <div class="dropdown-content">
-                    <a href="/YourFreeLancer/Diagnostic_accompagnement">Accompagnement</a>
-                    <a href="/YourFreeLancer/marketing">Marketing</a>
-                    <a href="/YourFreeLancer/photography">Photography</a>
-                    <a href="/YourFreeLancer/blog">Articles</a>
-                </div>
-            `
+            link: [
+                { text: "Accompagnement", url: "/YourFreeLancer/Diagnostic_accompagnement" },
+                { text: "Marketing", url: "/YourFreeLancer/marketing" },
+                { text: "Photography", url: "/YourFreeLancer/photography" },
+                { text: "Articles", url: "/YourFreeLancer/blog" }
+            ]
         },
         {
             titre: "Contact",
@@ -49,6 +47,22 @@ function menu() {
             a.setAttribute('href', menuItem.link);
             a.textContent = menuItem.titre;
             li.appendChild(a);
+        } else if (menuItem.class === "dropdown") {
+            const a = document.createElement('a');
+            a.setAttribute('href', '#');
+            a.classList.add('dropbtn');
+            a.textContent = menuItem.titre;
+            li.appendChild(a);
+
+            const div = document.createElement('div');
+            div.classList.add('dropdown-content');
+            menuItem.link.forEach(item => {
+                const a = document.createElement('a');
+                a.setAttribute('href', item.url);
+                a.textContent = item.text;
+                div.appendChild(a);
+            });
+            li.appendChild(div);
         } else {
             li.innerHTML = menuItem.link;
         }
