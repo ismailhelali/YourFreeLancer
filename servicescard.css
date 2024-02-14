@@ -11,16 +11,15 @@ body {
     line-height: 1.6;
     background-color: #000000;
     color: #FFFFFF;
-    display: flex; /* Center content vertically */
-    justify-content: center; /* Center content horizontally */
-    align-items: center; /* Center content vertically */
     min-height: 100vh; /* Ensure full viewport height */
 }
 
-.container {
+.container,
+.services {
     width: 90%;
     max-width: 1200px;
     margin: 0 auto; /* Center the container horizontally */
+    text-align: left; /* Align text to the left */
 }
 
 /* Style de la section Services */
@@ -28,31 +27,15 @@ body {
     background-color: #1F1F1F;
     color: #FFFFFF;
     padding: 100px 0;
-    text-align: center;
-    width:100%;
-    margin: 20px auto; /* Equal margin on top and bottom, auto left and right */
 }
 
-
-.services {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.services h2,
-.services div,
-.services h3 {
-    text-align: center;
-}
-
-.service-cards {
+.services .service-cards {
     display: flex;
     flex-direction: row; /* Display cards in a row */
     flex-wrap: wrap;
     justify-content: center; /* Center-align cards horizontally */
     margin-top: 40px;
-    width:90%;
+    width: 100%;
 }
 
 .service-card {
