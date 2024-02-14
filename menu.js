@@ -23,7 +23,7 @@ function menu() {
         },
         {
             titre: "Services",
-            class: "dropdown",
+            class: "dropbtn",
             link: [
                 { text: "Accompagnement", url: "/YourFreeLancer/Diagnostic_accompagnement" },
                 { text: "Marketing", url: "/YourFreeLancer/marketing" },
