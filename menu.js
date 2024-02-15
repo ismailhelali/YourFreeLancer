@@ -13,17 +13,23 @@ const menus = [
         titre: "Services",
         class: "dropdown",
         link: [
-            { text: "Accompagnement", url: "/YourFreeLancer/Diagnostic_accompagnement" },
             { text: "Marketing", url: "/YourFreeLancer/marketing" },
             { text: "Photography", url: "/YourFreeLancer/photography" },
             { text: "Articles", url: "/YourFreeLancer/blog" }
         ]
     },
+
+           {
+        titre: "Consulting",
+        class: "li",
+        link: "/YourFreeLancer/Diagnostic_accompagnement"
+    }
     {
         titre: "Contact",
         class: "li",
         link: "#contact"
     }
+ 
 ];
 
 const container = document.getElementById('menu');
