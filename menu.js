@@ -23,7 +23,7 @@ const menus = [
         titre: "Consulting",
         class: "li",
         link: "/YourFreeLancer/Diagnostic_accompagnement"
-    }
+    },
     {
         titre: "Contact",
         class: "li",
