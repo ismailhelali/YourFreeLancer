@@ -4,169 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cabinet de Conseil Ismail Helali</title>
-<link rel="stylesheet" href="menu.css"> 
-<link rel="stylesheet" href="contact.css"> 
+
+    <link rel="stylesheet" href="servicescard.css">
+    <link rel="stylesheet" href="hero.css">  
+    <link rel="stylesheet" href="menu.css"> 
+    <link rel="stylesheet" href="contact.css"> 
   
 <style>
 
-    /* Réinitialiser la marge et le rembourrage par défaut */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* Styles globaux */
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.6;
-    background-color: #000000;
-    color: #FFFFFF;
-}
-
-.container {
-    width: 90%;
-    margin: 0 auto;
-    max-width: 1200px;
-}
-
-/* Style de la section Hero */
-.hero {
-    background-image: url('background.jpg');
-    background-size: cover;
-    background-position: center;
-    padding: 200px 0;
-    text-align: left;
-}
-
-.hero h2 {
-    font-size: 4.1rem;
-    margin-bottom: 20px;
-}
-
-.hero p {
-    font-size: 1.5rem;
-}
-
-/* Adjust font sizes for small devices */
-@media only screen and (max-width: 768px) {
-    .hero h2 {
-        font-size: 3rem; /* Adjust font size for h1 on smaller devices */
-    }
-
-    .hero p {
-        font-size: 1.2rem; /* Adjust font size for p on smaller devices */
-    }
-}
-    
-
-/* Style de la section Services */
-.services {
-    background-color: #1F1F1F;
-    color: #FFFFFF;
-    padding: 100px 0;
-    text-align: center;
-}
-
-.service-cards {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin-top: 40px;
-}
-
-.service-card {
-    width: 300px;
-    padding: 30px;
-    margin: 20px;
-    background-color: #333333;
-    border-radius: 20px;
-    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.1);
-    transition: transform 0.3s ease;
-}
-
-.service-card:hover {
-    transform: scale(1.05);
-}
-
-.service-card h3 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-    color: #FFFFFF;
-}
-
-/* Style de la section Contact */
-.contact {
-    background-color: #000000;
-    color: #FFFFFF;
-    padding: 100px 0;
-    text-align: center;
-}
-
-.contact-form input,
-.contact-form textarea {
-    width: 100%;
-    margin-bottom: 20px;
-    padding: 15px;
-    border: none;
-    border-radius: 5px;
-    background-color: #333333;
-    color: #FFFFFF;
-}
-
-.contact-form textarea {
-    resize: none;
-    height: 150px;
-}
-
-.contact-form button {
-    padding: 15px 30px;
-    border: none;
-    border-radius: 5px;
-    background-color: #FFD700;
-    color: #333333;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.contact-form button:hover {
-    background-color: #FFEC8B;
-}
-
-/* Style du pied de page */
-.footer {
-    background-color: #1F1F1F;
-    color: #FFFFFF;
-    padding: 20px 0;
-    text-align: center;
-
-}
-/* Button Styles */
-.cta-button {
-    display: inline-block;
-    padding: 12px 24px;
-    font-size: 18px;
-    font-weight: bold;
-    color: #ffffff;
-    text-decoration: none;
-    border: none;
-    border-radius: 50px;
-    background-color: #ffcc00; /* Yellow color */
-    background-image: linear-gradient(to right, #ffcc00, #ff9933); /* Gradient */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Box shadow */
-    transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s;
-}
-
-.cta-button:hover {
-    background-color: #ffdb4d; /* Lighter yellow on hover */
-    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); /* Slightly larger shadow on hover */
-    transform: translateY(-2px); /* Move button up on hover */
-}
-
-.cta-button:active {
-    transform: translateY(0); /* Reset position on click */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Small shadow on click */
-}
 
 .inline a {
     color: #00FF00; /* Default text color */
@@ -235,14 +80,8 @@ body {
 
 
 
-    <header id="hero" class="hero">
-        <div class="container">
-            <h2>Ismail Helali Auto-Entrepreneur et Ingénieur en Industries et Supply Chain | Rabat-Maroc.</h2>
-            <br>
-<div class="inline">
-    <a href="#contact">Prendre Contact</a>
-    <h3>Je reste a votre disposition pour plus d'informations .</h3>
-</div>
+    <header id="hero" class="hero"> </header>
+
 
         </div>
     </header>
@@ -304,8 +143,8 @@ body {
 
 
 
-
     <script src="menu.js"></script>
+    <script src="hero.js"></script>
     <script src="contact.js"></script>
     <script src="sendform.js"></script>
     
