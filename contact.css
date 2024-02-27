@@ -1,0 +1,36 @@
+.container {
+    background-color: #000000;
+    color: #FFFFFF;
+    padding: 100px 0;
+    text-align: center;
+}
+
+.container input,
+.container textarea {
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #333333;
+    color: #FFFFFF;
+}
+
+.container textarea {
+    resize: none;
+    height: 150px;
+}
+
+#submit {
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    background-color: #FFD700;
+    color: #333333;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#submit:hover {
+    background-color: #FFEC8B;
+}

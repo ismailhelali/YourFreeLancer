@@ -1,0 +1,38 @@
+/* Style de la section Hero */
+.hero {
+    background-image: url('background.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 200px 0;
+    text-align: left;
+}
+
+.hero h2 {
+    font-size: 4.1rem;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.5rem;
+}
+
+/* Adjust font sizes for small devices */
+@media only screen and (max-width: 768px) {
+    .hero h2 {
+        font-size: 3rem; /* Adjust font size for h1 on smaller devices */
+    }
+
+    .hero p {
+        font-size: 1.2rem; /* Adjust font size for p on smaller devices */
+    }
+}
+    
+.inline a {
+    color: #00FF00; /* Default text color */
+    text-decoration: none; /* Remove default underline */
+}
+
+.inline a:hover {
+    color: white; /* Text color on hover */
+    text-decoration: underline; /* Underline on hover */
+}
