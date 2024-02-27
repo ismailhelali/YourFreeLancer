@@ -2,27 +2,27 @@ const menus = [
     {
         titre: "Ismail Helali",
         class: "logo",
-        link: "/YourFreeLancer/"
+        link: "/"
     },
     {
         titre: "Accueil",
         class: "li",
-        link: "/YourFreeLancer/"
+        link: "/"
     },
     {
         titre: "Services",
         class: "dropdown",
         link: [
-            { text: "Marketing", url: "/YourFreeLancer/marketing" },
-            { text: "Photography", url: "/YourFreeLancer/photography" },
-            { text: "Articles", url: "/YourFreeLancer/blog" }
+            { text: "Marketing", url: "/marketing" },
+            { text: "Photography", url: "/photography" },
+            { text: "Articles", url: "/blog" }
         ]
     },
 
            {
         titre: "Consulting",
         class: "li",
-        link: "/YourFreeLancer/Diagnostic_accompagnement"
+        link: "/Diagnostic_accompagnement"
     },
     {
         titre: "Contact",
