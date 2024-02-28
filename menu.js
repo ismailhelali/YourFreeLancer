@@ -15,7 +15,7 @@ const menus = [
         link: [
             { text: "Marketing", url: "/marketing" },
             { text: "Photography", url: "/photography" },
-            { text: "Articles", url: "/blog" }
+            { text: "Podcast", url: "/Podcast/" }
         ]
     },
 
