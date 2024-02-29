@@ -5,23 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Photography Services</title>
     <link rel="stylesheet" href="photography.css">
+
+    <link rel="stylesheet" href="menu.css"> 
+    <link rel="stylesheet" href="contact.css"> 
 </head>
 <body>
-<nav class="navbar">
-    <ul class="nav-links">
-        <li><h1 class="logo">Ismail Helali</h1></li>
-        <li><a href="/YourFreeLancer/">Accueil</a></li>
-        <li class="dropdown">
-            <a href="#" class="dropbtn">Services</a>
-            <div class="dropdown-content">
-                <a href="/YourFreeLancer/Diagnostic_accompagnement">Accompagnement</a>
-                <a href="/YourFreeLancer/marketing">Marketing</a>
-                <a href="/YourFreeLancer/photography">Photography</a>
-            </div>
-        </li>
-        <li><a href="#contact">Contact</a></li>
-    </ul>
-</nav>
+    <div id="menu"></div>
+
 
 <header id="hero" class="hero">
     <div class="container">
@@ -46,23 +36,21 @@
         </div>
     </section>
 
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2>Contact Us</h2>
-            <form class="contact-form">
-                <input type="text" placeholder="Your Name">
-                <input type="email" placeholder="Your Email">
-                <textarea placeholder="Your Message"></textarea>
-                <button type="submit">Send Message</button>
-            </form>
-        </div>
-    </section>
+    <div class="container">
+        <form method="post" action="" name="contact-form" id="contactform">
+        </form>
+    </div>
 
     <footer class="footer">
         <div class="container">
             <p>&copy; 2024 Ismail Helali Ae. All rights reserved.</p>
         </div>
     </footer>
+
+    <script src="menu.js"></script>
+    <script src="contact.js"></script>
+    <script src="sendform.js"></script>
+
 
     <script src="scripts.js"></script>
     <script>
@@ -74,5 +62,7 @@
             }
         }
     </script>
+
+
 </body>
 </html>
