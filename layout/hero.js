@@ -10,7 +10,6 @@ function afficherhero() {
     const container = document.getElementById('hero');
     heros.forEach(hero => {
         const serviceElement = document.createElement('div');
-        serviceElement.classList.add('container');
         serviceElement.innerHTML = `
             <h2>${hero.titre}</h2>
             <br>
