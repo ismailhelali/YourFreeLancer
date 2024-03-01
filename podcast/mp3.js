@@ -1,7 +1,7 @@
 const mp3s = [
     {
         title: "the swing",
-        link: "/podcast/first.mp3",
+        link: "/podcast/mp3/first.mp3",
         description: "Nous prodiguons des conseils et accompagnons les entreprises tout au long de leur chaîne d'approvisionnement."
     },
     {
