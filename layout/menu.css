@@ -26,7 +26,7 @@
     margin-right: 60px; /* Add margin to the right of each menu item */
 }
 .nav-links a:hover,
-.logo:hover {
+.logo a:hover {
     color: #FFD700;
 }
 .nav-links a {
