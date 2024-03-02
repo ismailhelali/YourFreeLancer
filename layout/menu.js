@@ -1,79 +1,52 @@
 const menus = [
     {
-        titre: "Ismail Helali",
-        class: "logo",
-        link: "/"
+        title: "Ismail Helali",
+        home: "Accueil",
+        linkhome: "/"
     },
     {
-        titre: "Accueil",
-        class: "li",
-        link: "/"
-    },
-    {
-        titre: "Services",
-        class: "dropdown",
-        link: [
-            { text: "Marketing", url: "/marketing" },
-            { text: "Photography", url: "/photography" },
-            { text: "Podcast", url: "/Podcast/" }
+        title: "Services",
+        link: "#",
+        subMenus: [
+            { title: "Accompagnement", link: "/YourFreeLancer/Diagnostic_accompagnement" },
+            { title: "Marketing", link: "/YourFreeLancer/marketing" },
+            { title: "Photography", link: "/YourFreeLancer/photography" }
         ]
     },
-
-           {
-        titre: "Consulting",
-        class: "li",
-        link: "/Diagnostic_accompagnement"
-    },
     {
-        titre: "Contact",
-        class: "li",
+        title: "Contact",
         link: "#contact"
     }
- 
 ];
 
-const container = document.getElementById('menu');
-
-function menu() {
-    // Create navbar element
-    const navbar = document.createElement('nav');
-    navbar.classList.add('navbar');
-
-    // Create ul element
-    const ul = document.createElement('ul');
-    ul.classList.add('nav-links');
-
-    // Create menu items and append them to ul
-    menus.forEach(menuItem => {
-        const li = document.createElement('li');
-        li.classList.add(menuItem.class);
-
-        const a = document.createElement('a');
-        a.setAttribute('href', menuItem.link);
-        a.textContent = menuItem.titre;
-        li.appendChild(a);
-
-        if (menuItem.class === "dropdown") {
-            const div = document.createElement('div');
-            div.classList.add('dropdown-content');
-            menuItem.link.forEach(item => {
-                const a = document.createElement('a');
-                a.setAttribute('href', item.url);
-                a.textContent = item.text;
-                div.appendChild(a);
-            });
-            li.appendChild(div);
+// Fonction pour afficher les navbar
+function affichermenus() {
+    const container = document.getElementById('menu');
+    menus.forEach(menu => {
+        const menuElement = document.createElement('nav');
+        menuElement.classList.add('navbar');
+        let htmlContent = `<ul class="nav-links">`;
+        htmlContent += `<li><h1 class="logo">${menu.title}</h1></li>`;
+        if (menu.home) {
+            htmlContent += `<li><a href="${menu.linkhome}">${menu.home}</a></li>`;
         }
-
-        ul.appendChild(li);
+        if (menu.subMenus) {
+            htmlContent += `<li class="dropdown">
+                                <a href="${menu.link}" class="dropbtn">${menu.title}</a>
+                                <div class="dropdown-content">`;
+            menu.subMenus.forEach(subMenu => {
+                htmlContent += `<a href="${subMenu.link}">${subMenu.title}</a>`;
+            });
+            htmlContent += `</div></li>`;
+        }
+        if (menu.link && !menu.subMenus) {
+            htmlContent += `<li><a href="${menu.link}">${menu.title}</a></li>`;
+        }
+        htmlContent += `</ul>`;
+        menuElement.innerHTML = htmlContent;
+        container.appendChild(menuElement);
     });
-
-    // Append ul to navbar
-    navbar.appendChild(ul);
-
-    // Append navbar to the menu div
-    container.appendChild(navbar);
 }
 
-// Call the menu function when the DOM content is loaded
-document.addEventListener('DOMContentLoaded', menu);
+// Appel de la fonction pour afficher les services
+affichermenus();
