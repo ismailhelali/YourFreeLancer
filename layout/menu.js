@@ -20,32 +20,26 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     ];
 
-    // Function to display the navbar
-    function displayMenus() {
-        const container = document.getElementById('menu');
-        menus.forEach(menu => {
-            const menuElement = document.createElement('nav');
-            menuElement.classList.add('navbar');
-            let htmlContent = `<ul class="nav-links">`;
-            if (menu.title === "Ismail Helali") {
-                htmlContent += `<li><h1 class="logo"><a href="${menu.linkhome}">${menu.title}</a></h1></li>`;
-            } else if (menu.subMenus) {
-                htmlContent += `<li class="dropdown">
-                                    <a href="${menu.link}" class="dropbtn">${menu.title}</a>
-                                    <div class="dropdown-content">`;
-                menu.subMenus.forEach(subMenu => {
-                    htmlContent += `<a href="${subMenu.link}">${subMenu.title}</a>`;
-                });
-                htmlContent += `</div></li>`;
-            } else {
-                htmlContent += `<li><a href="${menu.link}">${menu.title}</a></li>`;
-            }
-            htmlContent += `</ul>`;
-            menuElement.innerHTML = htmlContent;
-            container.appendChild(menuElement);
-        });
-    }
-
-    // Call the function to display the menus
-    displayMenus();
+    const container = document.getElementById('menu');
+    menus.forEach(menu => {
+        const menuElement = document.createElement('nav');
+        menuElement.classList.add('navbar');
+        let htmlContent = `<ul class="nav-links">`;
+        if (menu.title === "Ismail Helali") {
+            htmlContent += `<li><h1 class="logo"><a href="${menu.linkhome}">${menu.title}</a></h1></li>`;
+        } else if (menu.subMenus) {
+            htmlContent += `<li class="dropdown">
+                                <a href="${menu.link}" class="dropbtn">${menu.title}</a>
+                                <div class="dropdown-content">`;
+            menu.subMenus.forEach(subMenu => {
+                htmlContent += `<a href="${subMenu.link}">${subMenu.title}</a>`;
+            });
+            htmlContent += `</div></li>`;
+        } else {
+            htmlContent += `<li><a href="${menu.link}">${menu.title}</a></li>`;
+        }
+        htmlContent += `</ul>`;
+        menuElement.innerHTML = htmlContent;
+        container.appendChild(menuElement);
+    });
 });
