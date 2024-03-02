@@ -26,10 +26,7 @@ function affichermenus() {
         const menuElement = document.createElement('nav');
         menuElement.classList.add('navbar');
         let htmlContent = `<ul class="nav-links">`;
-        htmlContent += `<li><h1 class="logo">${menu.title}</h1></li>`;
-        if (menu.home) {
-            htmlContent += `<li><a href="${menu.linkhome}">${menu.home}</a></li>`;
-        }
+        htmlContent += `<li><h1 class="logo"><a href="${menu.linkhome || '/'}">${menu.title}</a></h1></li>`;
         if (menu.subMenus) {
             htmlContent += `<li class="dropdown">
                                 <a href="${menu.link}" class="dropbtn">${menu.title}</a>
