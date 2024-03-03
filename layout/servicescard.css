@@ -67,34 +67,4 @@ body {
 }
 
 
-/* CSS for the #mp3 section */
-#mp3 {
-    background-color: #252525; /* Background color for the mp3 section */
-    padding: 100px 0; /* Padding for the mp3 section */
-    text-align: center; /* Align text to the center */
-}
 
-#mp3 h2 {
-    color: #FFFFFF; /* Text color for the heading inside mp3 section */
-    margin-bottom: 40px; /* Margin bottom for the heading */
-}
-
-#mp3 .container {
-    max-width: 1200px; /* Limit the maximum width for better readability */
-    margin: 0 auto; /* Center the container horizontally */
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around; /* Add space between the cards */
-}
-
-#mp3 .service-card {
-    width: calc(33.33% - 40px); /* Adjust card width for three cards in a row with space between them */
-    margin-bottom: 40px; /* Add ergonomic space between the rows */
-}
-
-/* Media query for screens smaller than 768px (typical mobile screens) */
-@media (max-width: 767px) {
-    #mp3 .service-card {
-        width: calc(50% - 40px); /* Adjust card width for two cards in a row with space between them for mobile screens */
-    }
-}
