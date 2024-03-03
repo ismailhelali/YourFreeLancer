@@ -5,12 +5,16 @@ const menus = [
         linkhome: "/"
     },
     {
+        title: "Lezajal Podcast",
+        link: "/podcast",
+    },
+    {
         title: "Services",
         link: "#",
         subMenus: [
-            { title: "Accompagnement", link: "/YourFreeLancer/Diagnostic_accompagnement" },
-            { title: "Marketing", link: "/YourFreeLancer/marketing" },
-            { title: "Photography", link: "/YourFreeLancer/photography" }
+            { title: "Accompagnement", link: "/Diagnostic_accompagnement" },
+            { title: "Marketing", link: "/marketing" },
+            { title: "Photography", link: "/photography" }
         ]
     },
     {
