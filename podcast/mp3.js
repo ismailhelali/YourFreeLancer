@@ -36,8 +36,8 @@ async function affichermp3s() {
         mp3Element.innerHTML = `
             <div class="service-card">
                 <h2>${mp3.title}</h2>
-                <audio controls>
-                    <source src="${mp3.link}" type="audio/mpeg">
+                <audio controls class="custom-audio">
+                <source src="${mp3.link}" type="audio/mpeg">
                     Your browser does not support the audio element.
                 </audio>
                 <p>${descriptionContent}</p>
