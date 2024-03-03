@@ -24,7 +24,9 @@ document.addEventListener("DOMContentLoaded", function() {
     menus.forEach(menu => {
         const menuElement = document.createElement('nav');
         menuElement.classList.add('navbar');
-        let htmlContent = `<ul class="nav-links">`;
+        const ul = document.createElement('ul');
+        ul.classList.add('nav-links');
+        let htmlContent = '';
         if (menu.title === "Ismail Helali") {
             htmlContent += `<li><h1 class="logo"><a href="${menu.linkhome}">${menu.title}</a></h1></li>`;
         } else if (menu.subMenus) {
@@ -38,8 +40,8 @@ document.addEventListener("DOMContentLoaded", function() {
         } else {
             htmlContent += `<li><a href="${menu.link}">${menu.title}</a></li>`;
         }
-        htmlContent += `</ul>`;
-        menuElement.innerHTML = htmlContent;
+        ul.innerHTML = htmlContent;
+        menuElement.appendChild(ul);
         container.appendChild(menuElement);
     });
 });
