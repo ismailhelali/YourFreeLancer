@@ -6,8 +6,8 @@ const mp3s = [
     },
     {
         title: "the swing2",
-        link: "/podcast/second.mp3",
-        descriptionLink: "/path/to/second_description.txt" // Add description link
+        link: "/podcast/mp3/first.mp3",
+        descriptionLink: "/podcast/description/first.txt" // Add description link
     }
 ];
 
