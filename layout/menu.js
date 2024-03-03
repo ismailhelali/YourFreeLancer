@@ -1,47 +1,43 @@
-document.addEventListener("DOMContentLoaded", function() {
-    const menus = [
-        {
-            title: "Ismail Helali",
-            home: "Accueil",
-            linkhome: "/"
-        },
-        {
-            title: "Services",
-            link: "#",
-            subMenus: [
-                { title: "Accompagnement", link: "/YourFreeLancer/Diagnostic_accompagnement" },
-                { title: "Marketing", link: "/YourFreeLancer/marketing" },
-                { title: "Photography", link: "/YourFreeLancer/photography" }
-            ]
-        },
-        {
-            title: "Contact",
-            link: "#contact"
-        }
-    ];
+// Function to create the navbar HTML
+function createNavbar() {
+    const navbar = document.createElement('nav');
+    navbar.classList.add('navbar');
 
-    const container = document.getElementById('menu');
+    const navLinks = document.createElement('ul');
+    navLinks.classList.add('nav-links');
+
     menus.forEach(menu => {
-        const menuElement = document.createElement('nav');
-        menuElement.classList.add('navbar');
-        const ul = document.createElement('ul');
-        ul.classList.add('nav-links');
-        let htmlContent = '';
-        if (menu.title === "Ismail Helali") {
-            htmlContent += `<li><h1 class="logo"><a href="${menu.linkhome}">${menu.title}</a></h1></li>`;
-        } else if (menu.subMenus) {
-            htmlContent += `<li class="dropdown">
-                                <a href="${menu.link}" class="dropbtn">${menu.title}</a>
-                                <div class="dropdown-content">`;
+        const menuItem = document.createElement('li');
+        if (menu.subMenus) {
+            menuItem.classList.add('dropdown');
+            const dropdownToggle = document.createElement('a');
+            dropdownToggle.setAttribute('href', menu.link || '#');
+            dropdownToggle.textContent = menu.title;
+            menuItem.appendChild(dropdownToggle);
+
+            const dropdownContent = document.createElement('ul');
+            dropdownContent.classList.add('dropdown-content');
             menu.subMenus.forEach(subMenu => {
-                htmlContent += `<a href="${subMenu.link}">${subMenu.title}</a>`;
+                const subMenuItem = document.createElement('li');
+                const subMenuLink = document.createElement('a');
+                subMenuLink.setAttribute('href', subMenu.link);
+                subMenuLink.textContent = subMenu.title;
+                subMenuItem.appendChild(subMenuLink);
+                dropdownContent.appendChild(subMenuItem);
             });
-            htmlContent += `</div></li>`;
+            menuItem.appendChild(dropdownContent);
         } else {
-            htmlContent += `<li><a href="${menu.link}">${menu.title}</a></li>`;
+            const link = document.createElement('a');
+            link.setAttribute('href', menu.link || '#');
+            link.textContent = menu.title;
+            menuItem.appendChild(link);
         }
-        ul.innerHTML = htmlContent;
-        menuElement.appendChild(ul);
-        container.appendChild(menuElement);
+        navLinks.appendChild(menuItem);
     });
-});
+
+    navbar.appendChild(navLinks);
+    document.body.appendChild(navbar);
+}
+
+// Call the function to create the navbar
+createNavbar();
