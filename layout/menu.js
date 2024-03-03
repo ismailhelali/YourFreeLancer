@@ -1,3 +1,25 @@
+const menus = [
+    {
+        title: "Ismail Helali",
+        home: "Accueil",
+        linkhome: "/"
+    },
+    {
+        title: "Services",
+        link: "#",
+        subMenus: [
+            { title: "Accompagnement", link: "/YourFreeLancer/Diagnostic_accompagnement" },
+            { title: "Marketing", link: "/YourFreeLancer/marketing" },
+            { title: "Photography", link: "/YourFreeLancer/photography" }
+        ]
+    },
+    {
+        title: "Contact",
+        link: "#contact"
+    }
+];
+
+
 // Function to create the navbar HTML
 function createNavbar() {
     const navbar = document.createElement('nav');
@@ -8,28 +30,25 @@ function createNavbar() {
 
     menus.forEach(menu => {
         const menuItem = document.createElement('li');
+        const link = document.createElement('a');
+        link.textContent = menu.title;
+        link.setAttribute('href', menu.link || '#');
+
         if (menu.subMenus) {
             menuItem.classList.add('dropdown');
-            const dropdownToggle = document.createElement('a');
-            dropdownToggle.setAttribute('href', menu.link || '#');
-            dropdownToggle.textContent = menu.title;
-            menuItem.appendChild(dropdownToggle);
-
             const dropdownContent = document.createElement('ul');
             dropdownContent.classList.add('dropdown-content');
             menu.subMenus.forEach(subMenu => {
                 const subMenuItem = document.createElement('li');
                 const subMenuLink = document.createElement('a');
-                subMenuLink.setAttribute('href', subMenu.link);
                 subMenuLink.textContent = subMenu.title;
+                subMenuLink.setAttribute('href', subMenu.link);
                 subMenuItem.appendChild(subMenuLink);
                 dropdownContent.appendChild(subMenuItem);
             });
+            menuItem.appendChild(link);
             menuItem.appendChild(dropdownContent);
         } else {
-            const link = document.createElement('a');
-            link.setAttribute('href', menu.link || '#');
-            link.textContent = menu.title;
             menuItem.appendChild(link);
         }
         navLinks.appendChild(menuItem);
@@ -41,3 +60,4 @@ function createNavbar() {
 
 // Call the function to create the navbar
 createNavbar();
+
