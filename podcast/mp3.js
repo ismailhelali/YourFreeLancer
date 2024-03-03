@@ -2,12 +2,12 @@ const mp3s = [
     {
         title: "the swing",
         link: "/podcast/mp3/first.mp3",
-        description: "Nous prodiguons des conseils et accompagnons les entreprises tout au long de leur chaîne d'approvisionnement."
+        descriptionLink: "/podcast/description/first.txt" // Add description link
     },
     {
         title: "the swing2",
         link: "/podcast/second.mp3",
-        description: "Nous avons élaboré une méthode visant à identifier et analyser les risques susceptibles de compromettre la qualité de vos services et d'engendrer des coûts supplémentaires à chaque étape de votre travail. Nous intervenons de manière proactive pour remédier à ces problématiques."
+        descriptionLink: "/path/to/second_description.txt" // Add description link
     }
 ];
 
@@ -24,7 +24,7 @@ function affichermp3s() {
                     <source src="${mp3.link}" type="audio/mpeg">
                     Your browser does not support the audio element.
                 </audio>
-                <p>${mp3.description}</p>
+                <p><a href="${mp3.descriptionLink}" target="_blank">Description</a></p> <!-- Render description as a link -->
             </div>
         `;
         container.appendChild(mp3Element);
