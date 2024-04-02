@@ -1,7 +1,7 @@
 const heros = [
     {
         titre: "Ismail Helali Auto-Entrepreneur et Ingénieur en Industries et Supply Chain | Rabat-Maroc.",
-        description: "Je reste a votre disposition pour plus d'informations ."
+        description: " site web en construction , Je reste a votre disposition pour plus d'informations ."
     }
 ];
 
