@@ -1,66 +1,45 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>to be merged with podcast</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f0f0f0;
-        }
-        .container {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        h1 {
-            text-align: center;
-            color: #333;
-        }
-        .document-item {
-            margin-bottom: 20px;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            background-color: #f9f9f9;
-        }
-    </style>
+    <title>Podcast</title>
+    <link rel="stylesheet" href="/layout/servicescard.css">
+    <link rel="stylesheet" href="/layout/hero.css">  
+    <link rel="stylesheet" href="/layout/menu.css"> 
+    <link rel="stylesheet" href="/layout/contact.css"> 
+
+
 </head>
 <body>
+    
+    <div id="navbarContainer"></div>
+
+    <header id="hero" class="hero"> </header>
+
+
+
+    <section class="services">
     <div class="container">
-        <h1>Text File Viewer</h1>
-        <div id="documentContainer"></div>
+    <h2>LeZajal</h2>
+    <div id="services-container" class="service-cards"></div>
     </div>
+    </section>
+    
 
-    <script>
-        var fileNames = ['Supplyvalue.txt', 'file2.txt']; // Array of file names
+  
+	<div class="container" id="contact">
+		<form method="post" action="" name="contact-form" id="contactform">
+		</form>
+	</div>
 
-        document.addEventListener('DOMContentLoaded', function() {
-            displayTextFiles();
-        });
 
-        function displayTextFiles() {
-            var documentContainer = document.getElementById('documentContainer');
-            documentContainer.innerHTML = '';
+    <script src="/layout/hero.js"></script>
+    <script src="/layout/menu.js"></script>
+    <script src="/podcast/mp3.js"></script>
+    <script src="/layout/contact.js"></script>
+    <script src="/layout/sendform.js"></script>
 
-            fileNames.forEach(name => {
-                fetch(name)
-                    .then(response => response.text())
-                    .then(data => {
-                        var documentItem = document.createElement('div');
-                        documentItem.setAttribute('class', 'document-item');
-                        documentItem.innerText = data;
-                        documentContainer.appendChild(documentItem);
-                    })
-                    .catch(error => console.error('Error:', error));
-            });
-        }
-    </script>
+
 </body>
 </html>
