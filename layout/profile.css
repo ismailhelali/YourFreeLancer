@@ -1,0 +1,45 @@
+.profile-container {
+    position: relative;
+    width: 279px;
+    height: 279px;
+    margin: 0 auto;
+    transition: background-color 0.3s ease; /* Add transition effect for background color */
+}
+
+.profile-container:hover {
+    background-color: #f0f0f0; /* Change background color on hover */
+}
+
+.profile-container .profile {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.profile-container .profile img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.profile-container .quote {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width:  100%;
+    height: 100%;
+    padding: 5px;
+    background-color: rgba(255, 255, 255, 0.5); /* alpha channel to 0.5 for transparency */
+    border-radius: 10px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.profile-container:hover .quote {
+    opacity: 1;
+    color:black;
+}
