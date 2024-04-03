@@ -1,6 +1,6 @@
 const mp3s = [
     {
-        title: "the swing",
+        title: "La vie",
         link: "/podcast/mp3/first.mp3",
         descriptionLink: "/podcast/description/first.txt" // Add description link
     },
