@@ -5,8 +5,8 @@ const services = [
         descriptionLink: "/podcast/blog.html" // Add description link
     },
     {
-        id: "vie",
-        link: "/podcast/img/lavie.png",
+        id: "amour",
+        link: "/podcast/img/amour.png",
         descriptionLink: "/podcast/blog.html" // Add description link
     }
 ];
