@@ -38,7 +38,7 @@ async function afficherpodcasts() {
         <div class="profile">
             <img src="${podcast.link}" alt="Podcast Ismail helali titre La vie">
         </div>
-        <a href="${descriptionLink.link}">
+        <a href="${podcast.descriptionLink}">
         <div class="quote">La vie sous forme de Poesie - Ismail Helali</div></a>
     </div>
         `;
