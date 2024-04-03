@@ -30,8 +30,6 @@ async function afficherpodcasts() {
         const podcastElement = document.createElement('div');
         podcastElement.classList.add('podcast');
 
-        // Fetch description content asynchronously
-        const descriptionContent = await getDescriptionContent(podcast.descriptionLink);
 
         podcastElement.innerHTML = `
         <div class="profile-container">
