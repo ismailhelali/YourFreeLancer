@@ -1,4 +1,4 @@
-const podcasts = [
+const services = [
     {
         id: "vie",
         link: "/podcast/img/lavie.png",
@@ -11,41 +11,23 @@ const podcasts = [
     }
 ];
 
-// Function to fetch description content asynchronously
-async function getDescriptionContent(descriptionLink) {
-    try {
-        const response = await fetch(descriptionLink);
-        const text = await response.text();
-        return text;
-    } catch (error) {
-        console.error(`Error fetching description: ${error.message}`);
-        return "Description not available";
-    }
-}
-
 // Fonction pour afficher les podcast
-async function afficherpodcasts() {
-    const container = document.getElementById('podcasts-containe');
-    for (const podcast of podcasts) {
-        const podcastElement = document.createElement('div');
-        podcastElement.classList.add('podcast');
-
-
-        podcastElement.innerHTML = `
+function afficherServices() {
+    const container = document.getElementById('podcasts-container');
+    services.forEach(service => {
+       
+        serviceElement.innerHTML = `
         <div class="profile-container">
         <div class="profile">
-            <img src="${podcast.link}" alt="Podcast Ismail helali titre La vie">
+            <img src="${service.link}" alt="Podcast Ismail helali titre La vie">
         </div>
-        <a href="${podcast.descriptionLink}">
+        <a href="${service.descriptionLink}">
         <div class="quote">La vie sous forme de Poesie - Ismail Helali</div></a>
     </div>
         `;
-        container.appendChild(podcastElement);
-    }
+        container.appendChild(serviceElement);
+    });
 }
 
 // Appel de la fonction pour afficher les services
-afficherpodcasts();
-
-
-
+afficherServices();
