@@ -15,7 +15,7 @@ const services = [
 function afficherServices() {
     const container = document.getElementById('podcasts-container');
     services.forEach(service => {
-       
+        const serviceElement = document.createElement('div');
         serviceElement.innerHTML = `
         <div class="profile-container">
         <div class="profile">
