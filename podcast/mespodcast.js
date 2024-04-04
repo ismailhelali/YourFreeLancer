@@ -39,7 +39,7 @@ function afficherServices() {
         profileElement.addEventListener('click', () => {
             console.log("Clicked on profile:", service.id);
             console.log("Navigating to:", service.descriptionLink);
-            window.location.href = service.descriptionLink;
+            window.location.href = service.descriptionLink + '?id=' + service.id;
         });
     });
 }
