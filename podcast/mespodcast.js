@@ -13,6 +13,11 @@ const services = [
 
 function afficherServices() {
     const container = document.getElementById('podcasts-container');
+    if (!container) {
+        console.error("Container element not found.");
+        return;
+    }
+
     services.forEach(service => {
         const serviceElement = document.createElement('div');
         serviceElement.innerHTML = `
@@ -26,6 +31,11 @@ function afficherServices() {
         container.appendChild(serviceElement);
 
         const imageElement = serviceElement.querySelector('.profile img');
+        if (!imageElement) {
+            console.error("Image element not found.");
+            return;
+        }
+
         imageElement.addEventListener('click', () => {
             console.log("Clicked on image:", service.id);
             console.log("Navigating to:", service.descriptionLink);
