@@ -27,6 +27,8 @@ function afficherServices() {
 
         const imageElement = serviceElement.querySelector('.profile img');
         imageElement.addEventListener('click', () => {
+            console.log("Clicked on image:", service.id);
+            console.log("Navigating to:", service.descriptionLink);
             window.location.href = service.descriptionLink;
         });
     });
