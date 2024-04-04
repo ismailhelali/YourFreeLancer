@@ -24,20 +24,20 @@ function afficherServices() {
         <div class="profile-container">
             <div class="profile" id="${service.id}">
                 <img src="${service.link}" alt="Podcast Ismail helali titre ${service.id}">
+                <div class="quote">${service.id}</div>
             </div>
-            <div class="quote">${service.id}</div>
         </div>
         `;
         container.appendChild(serviceElement);
 
-        const imageElement = serviceElement.querySelector('.profile img');
-        if (!imageElement) {
-            console.error("Image element not found.");
+        const profileElement = serviceElement.querySelector('.profile');
+        if (!profileElement) {
+            console.error("Profile element not found.");
             return;
         }
 
-        imageElement.addEventListener('click', () => {
-            console.log("Clicked on image:", service.id);
+        profileElement.addEventListener('click', () => {
+            console.log("Clicked on profile:", service.id);
             console.log("Navigating to:", service.descriptionLink);
             window.location.href = service.descriptionLink;
         });
