@@ -1,17 +1,18 @@
 const mp3s = [
     {
+        id: "vie",
         title: "La vie",
         link: "/podcast/mp3/first.mp3",
-        descriptionLink: "/podcast/description/first.txt" // Add description link
+        descriptionLink: "/podcast/description/first.txt"
     },
     {
+        id: "amour",
         title: "the swing2",
         link: "/podcast/mp3/first.mp3",
-        descriptionLink: "/podcast/description/first.txt" // Add description link
+        descriptionLink: "/podcast/description/first.txt"
     }
 ];
 
-// Function to fetch description content asynchronously
 async function getDescriptionContent(descriptionLink) {
     try {
         const response = await fetch(descriptionLink);
@@ -23,14 +24,12 @@ async function getDescriptionContent(descriptionLink) {
     }
 }
 
-// Fonction pour afficher les mp3
 async function affichermp3s() {
     const container = document.getElementById('services-container');
     for (const mp3 of mp3s) {
         const mp3Element = document.createElement('div');
         mp3Element.classList.add('mp3');
 
-        // Fetch description content asynchronously
         const descriptionContent = await getDescriptionContent(mp3.descriptionLink);
 
         mp3Element.innerHTML = `
@@ -47,5 +46,4 @@ async function affichermp3s() {
     }
 }
 
-// Appel de la fonction pour afficher les services
 affichermp3s();

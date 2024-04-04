@@ -2,32 +2,36 @@ const services = [
     {
         id: "vie",
         link: "/podcast/img/lavie.png",
-        descriptionLink: "/podcast/blog.html" // Add description link
+        descriptionLink: "/podcast/blog.html"
     },
     {
         id: "amour",
         link: "/podcast/img/amour.png",
-        descriptionLink: "/podcast/blog.html" // Add description link
+        descriptionLink: "/podcast/blog.html"
     }
 ];
 
-// Fonction pour afficher les podcast
 function afficherServices() {
     const container = document.getElementById('podcasts-container');
     services.forEach(service => {
         const serviceElement = document.createElement('div');
         serviceElement.innerHTML = `
         <div class="profile-container">
-        <div class="profile">
-            <img src="${service.link}" alt="Podcast Ismail helali titre La vie">
+            <div class="profile" id="${service.id}">
+                <img src="${service.link}" alt="Podcast Ismail helali titre La vie">
+            </div>
+            <div class="quote">${service.id}</div>
         </div>
-        <a href="${service.descriptionLink}">
-        <div class="quote">La vie sous forme de Poesie - Ismail Helali</div></a>
-    </div>
         `;
         container.appendChild(serviceElement);
+
+        // Adding click event listener to each profile
+        const profileElement = serviceElement.querySelector('.profile');
+        profileElement.addEventListener('click', () => {
+            // Navigate to description link when profile is clicked
+            window.location.href = service.descriptionLink;
+        });
     });
 }
 
-// Appel de la fonction pour afficher les services
 afficherServices();
