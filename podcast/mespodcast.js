@@ -17,18 +17,16 @@ function afficherServices() {
         const serviceElement = document.createElement('div');
         serviceElement.innerHTML = `
         <div class="profile-container">
-            <div class="profile" id="${service.id}">
-                <img src="${service.link}" alt="Podcast Ismail helali titre La vie">
-            </div>
+            <img class="profile" id="${service.id}" src="${service.link}" alt="Podcast Ismail helali titre ${service.id}">
             <div class="quote">${service.id}</div>
         </div>
         `;
         container.appendChild(serviceElement);
 
-        // Adding click event listener to each profile
-        const profileElement = serviceElement.querySelector('.profile');
-        profileElement.addEventListener('click', () => {
-            // Navigate to description link when profile is clicked
+        const imageElement = serviceElement.querySelector('.profile');
+        imageElement.addEventListener('click', () => {
+            console.log("Clicked on profile:", service.id);
+            console.log("Navigating to:", service.descriptionLink);
             window.location.href = service.descriptionLink;
         });
     });
