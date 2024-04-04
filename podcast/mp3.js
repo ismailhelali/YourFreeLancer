@@ -31,24 +31,32 @@ async function affichermp3s() {
         return;
     }
 
-    for (const mp3 of mp3s) {
-        const mp3Element = document.createElement('div');
-        mp3Element.classList.add('mp3');
+    // Get the ID from the query parameter
+    const urlParams = new URLSearchParams(window.location.search);
+    const id = urlParams.get('id');
 
-        const descriptionContent = await getDescriptionContent(mp3.descriptionLink);
+    mp3s.forEach(mp3 => {
+        if (mp3.id === id) {
+            const mp3Element = document.createElement('div');
+            mp3Element.classList.add('mp3');
 
-        mp3Element.innerHTML = `
-            <div class="service-card">
-                <h2>${mp3.title}</h2>
-                <audio controls class="custom-audio">
-                    <source src="${mp3.link}" type="audio/mpeg">
-                    Your browser does not support the audio element.
-                </audio>
-                <p>${descriptionContent}</p>
-            </div>
-        `;
-        container.appendChild(mp3Element);
-    }
+            (async () => {
+                const descriptionContent = await getDescriptionContent(mp3.descriptionLink);
+                mp3Element.innerHTML = `
+                    <div class="service-card">
+                        <h2>${mp3.title}</h2>
+                        <audio controls class="custom-audio">
+                            <source src="${mp3.link}" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                        <p>${descriptionContent}</p>
+                    </div>
+                `;
+            })();
+
+            container.appendChild(mp3Element);
+        }
+    });
 }
 
 affichermp3s();
