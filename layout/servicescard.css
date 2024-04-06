@@ -51,22 +51,3 @@
     }
 }
 
-.custom-audio {
-    background-color: #f0f0f0; /* Custom background color */
-    width: 100%; /* Custom width */
-    height: 40px; /* Custom height */
-    /* You can add more styles here */
-}
-
-/* Additional styles for the controls if needed */
-.custom-audio::-webkit-media-controls {
-    background-color: #f0f0f0; /* Custom background color for controls */
-}
-
-.custom-audio::-webkit-media-controls-play-button {
-    /* Custom styles for the play button */
-}
-
-.custom-audio::-webkit-media-controls-volume-slider {
-    /* Custom styles for the volume slider */
-}

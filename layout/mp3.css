@@ -1,11 +1,19 @@
-.service-card audio {
+.service-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .service-card audio {
     width: 100%;
+    margin-bottom: 20px;
   }
   
   .service-card .controls {
     display: flex;
     align-items: center;
-    margin-top: 10px;
   }
   
   .service-card .play-pause,
@@ -17,6 +25,12 @@
     width: 30px;
     height: 30px;
     background-size: contain;
+    transition: transform 0.2s ease;
+  }
+  
+  .service-card .play-pause:hover,
+  .service-card .mute:hover {
+    transform: scale(1.1);
   }
   
   .service-card .play-pause {
@@ -37,5 +51,9 @@
   .service-card .total-time {
     font-size: 14px;
     color: #666;
+  }
+  
+  .service-card p {
+    margin-top: 10px;
   }
   
