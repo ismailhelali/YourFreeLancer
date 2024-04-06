@@ -1,9 +1,5 @@
 const menus = [
-    {
-        title: "Ismail Helali",
-        home: "Accueil",
-        linkhome: "/"
-    },
+ 
     {
         title: "Lezajal Podcast",
         link: "/podcast",
