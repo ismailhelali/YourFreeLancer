@@ -7,7 +7,7 @@
   
   /* Container styles */
   .service-card {
-    background-color: #2c3e50;
+    background: url('background.jpg') center/cover;
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
     overflow: hidden;
@@ -32,28 +32,15 @@
   .service-card .play-pause {
     width: 50px;
     height: 50px;
-    background-color: #3498db;
+    background: url('play-button.png') center/cover;
     border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     cursor: pointer;
     margin-right: 15px;
-    transition: background-color 0.3s ease;
+    transition: transform 0.3s ease;
   }
   
   .service-card .play-pause:hover {
-    background-color: #2980b9;
-  }
-  
-  /* Play/pause icon styles */
-  .service-card .play-pause::after {
-    content: '';
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-width: 12px 0 12px 20px;
-    border-color: transparent transparent transparent #ffffff;
+    transform: scale(1.1);
   }
   
   /* Description styles */
