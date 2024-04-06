@@ -33,6 +33,11 @@
     margin-left: 0px;
     margin-right: 60px; /* Add margin to the right of each menu item */
 }
+
+.nav-links li a {
+    text-decoration: none;
+    color: inherit;
+  }
 .nav-links a:hover,
 .logo a:hover {
     color: #FFD700;
