@@ -7,9 +7,9 @@
   
   /* Container styles */
   .service-card {
-    background: url('background.jpg') center/cover;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(to bottom, #3e5151, #368c8c);
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
     overflow: hidden;
   }
   
@@ -17,15 +17,16 @@
   .service-card audio {
     width: 100%;
     display: block;
-    border-radius: 10px 10px 0 0;
+    border-radius: 20px 20px 0 0;
   }
   
   /* Controls styles */
   .service-card .controls {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     padding: 15px;
+    background-color: rgba(0, 0, 0, 0.3);
   }
   
   /* Play/pause button styles */
@@ -35,11 +36,23 @@
     background: url('play-button.png') center/cover;
     border-radius: 50%;
     cursor: pointer;
-    margin-right: 15px;
     transition: transform 0.3s ease;
   }
   
   .service-card .play-pause:hover {
+    transform: scale(1.1);
+  }
+  
+  /* Volume button styles */
+  .service-card .volume {
+    width: 30px;
+    height: 30px;
+    background: url('volume-icon.png') center/cover;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+  
+  .service-card .volume:hover {
     transform: scale(1.1);
   }
   
@@ -48,5 +61,6 @@
     color: #ffffff;
     font-size: 14px;
     padding: 15px;
+    text-align: center;
   }
   
