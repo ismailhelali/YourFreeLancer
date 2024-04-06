@@ -53,9 +53,9 @@ async function affichermp3s() {
                   <span class="current-time">0:00</span>
                   <span class="total-time">0:00</span>
                 </div>
-                <p>${descriptionContent}</p>
-            
+                <p class="description">By Ismail Helali</p>
               </div>
+              
                 `;
             })();
 
