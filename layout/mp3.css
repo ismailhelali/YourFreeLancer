@@ -1,0 +1,41 @@
+.service-card audio {
+    width: 100%;
+  }
+  
+  .service-card .controls {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+  }
+  
+  .service-card .play-pause,
+  .service-card .mute {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    width: 30px;
+    height: 30px;
+    background-size: contain;
+  }
+  
+  .service-card .play-pause {
+    background-image: url('play.svg');
+  }
+  
+  .service-card .mute {
+    background-image: url('volume.svg');
+  }
+  
+  .service-card .seek-bar,
+  .service-card .volume-bar {
+    flex: 1;
+    margin: 0 10px;
+  }
+  
+  .service-card .current-time,
+  .service-card .total-time {
+    font-size: 14px;
+    color: #666;
+  }
+  
