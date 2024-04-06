@@ -43,19 +43,14 @@ async function affichermp3s() {
             (async () => {
                 const descriptionContent = await getDescriptionContent(mp3.descriptionLink);
                 mp3Element.innerHTML = `
-                
+
                 <div class="service-card">
                 <audio src="${mp3.link}" controls></audio>
                 <div class="controls">
-                  <button class="play-pause"></button>
-                  <input type="range" class="seek-bar" value="0">
-                  <button class="mute"></button>
-                  <input type="range" class="volume-bar" min="0" max="1" step="0.1" value="1">
-                  <span class="current-time">0:00</span>
-                  <span class="total-time">0:00</span>
+                <div class="play-pause"></div>
                 </div>
-                <p class="description">By Ismail Helali</p>
-              </div>
+
+                <p>${descriptionContent}</p>
               
               
                 `;
