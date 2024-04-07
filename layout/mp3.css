@@ -1,17 +1,5 @@
-html {
-    height: 100%;
-    display: table;
-    margin: auto;
-  }
-  
-  body {
-    height: 100%;
-    display: table-cell;
-    vertical-align: middle;
-    background: yellow;
-  }
-  
-  .audio-player {
+
+.audio-player {
     background: rgb(199, 176, 176);
     border: 1px solid lighten(#acacac, 20%);
     width: 50vw;
@@ -19,6 +7,7 @@ html {
     display: flex;
     flex-flow: row;
     margin: 4rem 0 4rem 0;
+  }
     .album-image {
       min-height: 100px;
       width: 110px;
@@ -29,6 +18,7 @@ html {
       justify-content: center;
       margin-top: 2.5rem;
       flex: 3;
+    }
       progress {
         width: 90%;
       }
@@ -51,15 +41,16 @@ html {
       p {
         font-size: 1.6rem;
       }
-    }
+    
     #play-btn {
       background-image: url('https://cdn.fastly.picmonkey.com/content4/previews/arrows_2/arrows_2_44_550.png');
       background-size: cover;
       width: 75px;
       height: 75px;
       margin: 2rem 0 2rem 2rem;
-      &.pause {
+    }
+    #play-btn .pause {
         background-image: url('https://img.icons8.com/ios/452/circled-pause.png');
       }
-    }
-  }
+    
+  
