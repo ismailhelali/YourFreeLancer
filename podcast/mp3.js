@@ -13,7 +13,7 @@ const mp3s = [
     }
 ];
 
-async function getDescriptionContent(descriptionLink) {
+ function getDescriptionContent(descriptionLink) {
     try {
         const response = await fetch(descriptionLink);
         const text = await response.text();
@@ -24,7 +24,7 @@ async function getDescriptionContent(descriptionLink) {
     }
 }
 
-async function affichermp3s() {
+ function affichermp3s() {
     const container = document.getElementById('services-container');
     if (!container) {
         console.error("Container element not found.");
@@ -40,8 +40,8 @@ async function affichermp3s() {
             const mp3Element = document.createElement('div');
             mp3Element.classList.add('mp3');
 
-            (async () => {
-                const descriptionContent = await getDescriptionContent(mp3.descriptionLink);
+            ( () => {
+                const descriptionContent =  getDescriptionContent(mp3.descriptionLink);
                 mp3Element.innerHTML = `
 
                 <div class="audio-player">
