@@ -1,14 +1,4 @@
-html, body {
-    height: 100%;
-    display: flex;
-    margin: 0;
-  }
-  
-  body {
-    align-items: center;
-    justify-content: center;
-    background: yellow;
-  }
+ 
   
   .audio-player {
     background: rgb(199, 176, 176);
