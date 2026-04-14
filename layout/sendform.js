@@ -39,9 +39,9 @@ if (form) {
             }
 
             form.reset();
-            updateStatus("Merci, votre message a bien ete envoye.", "is-success");
+            updateStatus("Merci, votre message a bien été envoyé.", "is-success");
         } catch (error) {
-            updateStatus("Une erreur est survenue. Merci de reessayer dans un instant.", "is-error");
+            updateStatus("Une erreur est survenue. Merci de réessayer dans un instant.", "is-error");
             console.error("Error!", error.message);
         } finally {
             if (submitButton) {

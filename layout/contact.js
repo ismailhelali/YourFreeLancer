@@ -1,15 +1,15 @@
 const contactFields = [
     {
-        label: "Nom et prenom",
+        label: "Nom et prénom",
         name: "your-name",
         type: "text",
         placeholder: "Votre nom complet"
     },
     {
-        label: "Numero",
+        label: "Numéro",
         name: "your-number",
         type: "text",
-        placeholder: "Votre numero de telephone"
+        placeholder: "Votre numéro de téléphone"
     },
     {
         label: "Email",
@@ -21,7 +21,7 @@ const contactFields = [
         label: "Message",
         name: "message",
         type: "textarea",
-        placeholder: "Decrivez votre besoin ou votre projet"
+        placeholder: "Décrivez votre besoin ou votre projet"
     }
 ];
 
