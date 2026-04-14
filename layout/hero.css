@@ -1,38 +1,135 @@
-/* Style de la section Hero */
 .hero {
-    background-image: url('/pictures/hero-niklas-jeromin.jpg');
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 8rem 0 5rem;
+    background-image:
+        linear-gradient(90deg, rgba(5, 10, 9, 0.88) 0%, rgba(5, 10, 9, 0.62) 45%, rgba(5, 10, 9, 0.3) 100%),
+        url('/pictures/hero-niklas-jeromin.jpg');
     background-size: cover;
     background-position: center;
-    padding: 200px 0;
-    text-align: left;
 }
 
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: auto 0 0;
+    height: 11rem;
+    background: linear-gradient(180deg, rgba(8, 16, 14, 0) 0%, #0b1411 100%);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 48rem;
+}
+
+.hero h1,
 .hero h2 {
-    font-size: 4.1rem;
-    margin-bottom: 20px;
+    font-size: clamp(2.8rem, 7vw, 5.8rem);
+    line-height: 0.98;
+    margin: 1rem 0 1.2rem;
+    text-wrap: balance;
 }
 
-.hero p {
-    font-size: 1.5rem;
+.hero-lead,
+.hero p,
+.hero h3 {
+    font-size: clamp(1.05rem, 2vw, 1.28rem);
+    color: var(--muted);
+    max-width: 40rem;
 }
 
-/* Adjust font sizes for small devices */
-@media only screen and (max-width: 768px) {
-    .hero h2 {
-        font-size: 3rem; /* Adjust font size for h1 on smaller devices */
-    }
-
-    .hero p {
-        font-size: 1.2rem; /* Adjust font size for p on smaller devices */
-    }
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+    margin-top: 2rem;
 }
-    
+
+.cta-button,
+.secondary-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 3.25rem;
+    padding: 0.85rem 1.4rem;
+    border-radius: 999px;
+    text-decoration: none;
+    transition: transform 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.cta-button {
+    background: linear-gradient(135deg, var(--accent-strong), var(--accent));
+    color: #201507;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    font-weight: 700;
+}
+
+.secondary-link {
+    border: 1px solid rgba(243, 239, 229, 0.22);
+    color: var(--text);
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.cta-button:hover,
+.secondary-link:hover {
+    transform: translateY(-2px);
+}
+
+.hero-highlights {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+    list-style: none;
+    margin-top: 2.5rem;
+}
+
+.hero-highlights li {
+    padding: 1rem 1.1rem;
+    border: 1px solid var(--line);
+    border-radius: var(--radius-md);
+    background: rgba(12, 20, 17, 0.62);
+    backdrop-filter: blur(8px);
+    color: var(--text);
+}
+
 .inline a {
-    color: #00FF00; /* Default text color */
-    text-decoration: none; /* Remove default underline */
+    color: var(--accent-strong);
+    text-decoration: none;
 }
 
 .inline a:hover {
-    color: white; /* Text color on hover */
-    text-decoration: underline; /* Underline on hover */
+    color: var(--text);
+    text-decoration: underline;
+}
+
+@media (max-width: 900px) {
+    .hero {
+        min-height: auto;
+        padding: 7.5rem 0 4rem;
+        background-position: 68% center;
+    }
+
+    .hero-highlights {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 640px) {
+    .hero {
+        padding-top: 7rem;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .cta-button,
+    .secondary-link {
+        width: 100%;
+    }
 }

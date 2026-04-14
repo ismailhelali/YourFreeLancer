@@ -1,30 +1,80 @@
-const infos = [
+const contactFields = [
     {
-        cnt: "Prendre Contact",
-        name: "Nom et Prenom",
-        number: "votre numero.",
-        email: "votre Email",
-        msg: "Describe your problem"
+        label: "Nom et prenom",
+        name: "your-name",
+        type: "text",
+        placeholder: "Votre nom complet"
+    },
+    {
+        label: "Numero",
+        name: "your-number",
+        type: "text",
+        placeholder: "Votre numero de telephone"
+    },
+    {
+        label: "Email",
+        name: "your-email",
+        type: "email",
+        placeholder: "Votre adresse email"
+    },
+    {
+        label: "Message",
+        name: "message",
+        type: "textarea",
+        placeholder: "Decrivez votre besoin ou votre projet"
     }
 ];
 
-// Fonction pour afficher les informations de contact
-function afficherinfo() {
-    const container = document.getElementById('contactform');
-    infos.forEach(info => {
-        const infoElement = document.createElement('div');
-        infoElement.classList.add('container');
-        infoElement.innerHTML = `
-            <h4>${info.cnt}</h4>
-            <input type="text" name="your-name" placeholder="${info.name}">
-            <input type="text" name="your-number" placeholder="${info.number}">
-            <input type="email" name="your-email" placeholder="${info.email}">
-            <textarea name="message" rows="7" placeholder="${info.msg}"></textarea>
-            <input type="submit" value="Submit" id="submit"></input>
-        `;
-        container.appendChild(infoElement);
+function buildContactForm() {
+    const form = document.getElementById("contactform");
+    if (!form || form.children.length > 0) {
+        return;
+    }
+
+    const title = document.createElement("div");
+    title.className = "contact-intro";
+    title.innerHTML = `
+        <h3>Prendre contact</h3>
+        <p class="form-status" id="form-status" aria-live="polite"></p>
+    `;
+
+    form.appendChild(title);
+
+    contactFields.forEach(field => {
+        const wrapper = document.createElement("div");
+        wrapper.className = "contact-field";
+
+        const label = document.createElement("label");
+        label.setAttribute("for", field.name);
+        label.textContent = field.label;
+
+        const input = field.type === "textarea"
+            ? document.createElement("textarea")
+            : document.createElement("input");
+
+        input.name = field.name;
+        input.id = field.name;
+        input.placeholder = field.placeholder;
+        input.required = true;
+
+        if (field.type !== "textarea") {
+            input.type = field.type;
+        } else {
+            input.rows = 7;
+        }
+
+        wrapper.appendChild(label);
+        wrapper.appendChild(input);
+        form.appendChild(wrapper);
     });
+
+    const submit = document.createElement("button");
+    submit.type = "submit";
+    submit.id = "submit";
+    submit.className = "cta-button";
+    submit.textContent = "Envoyer la demande";
+
+    form.appendChild(submit);
 }
 
-// Appel de la fonction pour afficher les informations de contact
-afficherinfo();
+buildContactForm();

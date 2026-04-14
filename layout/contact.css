@@ -1,36 +1,100 @@
-.container {
-    background-color: #000000;
-    color: #FFFFFF;
-    padding: 100px 0;
-    text-align: center;
+.contact-section {
+    padding: 0 0 6rem;
 }
 
-.container input,
-.container textarea {
+.contact-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    gap: 1.5rem;
+    align-items: stretch;
+}
+
+.contact-copy,
+.contact-form {
+    padding: 2rem;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--line);
+    background: var(--panel);
+    box-shadow: var(--shadow);
+}
+
+.contact-form {
+    display: grid;
+    gap: 1rem;
+}
+
+.contact-intro h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.35rem;
+}
+
+.contact-field {
+    display: grid;
+    gap: 0.45rem;
+}
+
+.contact-field label {
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    font-size: 0.92rem;
+    color: var(--text);
+}
+
+.contact-form input,
+.contact-form textarea {
     width: 100%;
-    margin-bottom: 20px;
-    padding: 15px;
-    border: none;
-    border-radius: 5px;
-    background-color: #333333;
-    color: #FFFFFF;
+    padding: 0.95rem 1rem;
+    border: 1px solid rgba(243, 239, 229, 0.12);
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.04);
+    color: var(--text);
+    font: inherit;
 }
 
-.container textarea {
-    resize: none;
-    height: 150px;
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: rgba(189, 209, 195, 0.72);
+}
+
+.contact-form textarea {
+    resize: vertical;
+    min-height: 11rem;
 }
 
 #submit {
-    padding: 15px 30px;
-    border: none;
-    border-radius: 5px;
-    background-color: #FFD700;
-    color: #333333;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+    justify-self: start;
+    min-width: 180px;
 }
 
-#submit:hover {
-    background-color: #FFEC8B;
+#submit:disabled {
+    opacity: 0.7;
+    cursor: wait;
+}
+
+.form-status {
+    min-height: 1.5rem;
+    color: var(--muted);
+    font-size: 0.95rem;
+}
+
+.form-status.is-error {
+    color: #ffb4a2;
+}
+
+.form-status.is-success {
+    color: #cde7ae;
+}
+
+@media (max-width: 900px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-copy,
+    .contact-form {
+        padding: 1.35rem;
+    }
+
+    #submit {
+        width: 100%;
+    }
 }

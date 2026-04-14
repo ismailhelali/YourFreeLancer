@@ -1,8 +1,7 @@
 const menus = [
- 
     {
         title: "Lezajal Podcast",
-        link: "/podcast",
+        link: "/podcast"
     },
     {
         title: "Services",
@@ -13,67 +12,108 @@ const menus = [
             { title: "Photography", link: "/photography" }
         ]
     },
-    { 
+    {
         title: "Contact",
         link: "#contact"
     }
 ];
 
-// Add logo menu item
-const logoMenuItem = {
-    title: "Logo",
-    link: "/",
-    logo: "/pictures/ismailhelali-logo.png" // Path to your logo image
-};
-
-// Insert the logo menu item at the beginning of the menus array
-menus.unshift(logoMenuItem);
-
-// Function to create the navbar HTML
 function createNavbar() {
-    const navbar = document.createElement('nav');
-    navbar.classList.add('navbar');
+    const shell = document.createElement("div");
+    shell.className = "navbar-shell";
 
-    const navLinks = document.createElement('ul');
-    navLinks.classList.add('nav-links');
+    const navbar = document.createElement("nav");
+    navbar.className = "navbar";
+    navbar.setAttribute("aria-label", "Navigation principale");
+
+    const brandLink = document.createElement("a");
+    brandLink.className = "brand-link";
+    brandLink.href = "/";
+    brandLink.innerHTML = `
+        <img src="/pictures/ismailhelali-logo.png" alt="Logo Ismail Helali">
+        <span>Ismail Helali</span>
+    `;
+
+    const toggle = document.createElement("button");
+    toggle.type = "button";
+    toggle.className = "nav-toggle";
+    toggle.setAttribute("aria-expanded", "false");
+    toggle.setAttribute("aria-controls", "nav-links");
+    toggle.textContent = "Menu";
+
+    const navLinks = document.createElement("ul");
+    navLinks.className = "nav-links";
+    navLinks.id = "nav-links";
 
     menus.forEach(menu => {
-        const menuItem = document.createElement('li');
-        const link = document.createElement('a');
-        link.textContent = menu.title;
-        link.setAttribute('href', menu.link || '#');
+        const menuItem = document.createElement("li");
 
-        if (menu.logo) { // Check if it's a logo item
-            const logo = document.createElement('img');
-            logo.src = menu.logo;
-            logo.alt = 'Logo';
-            menuItem.appendChild(logo);
+        if (menu.subMenus) {
+            menuItem.className = "dropdown";
+
+            const trigger = document.createElement("button");
+            trigger.type = "button";
+            trigger.className = "dropdown-trigger";
+            trigger.setAttribute("aria-expanded", "false");
+            trigger.textContent = menu.title;
+
+            const dropdownContent = document.createElement("ul");
+            dropdownContent.className = "dropdown-content";
+
+            menu.subMenus.forEach(subMenu => {
+                const subMenuItem = document.createElement("li");
+                const subMenuLink = document.createElement("a");
+                subMenuLink.textContent = subMenu.title;
+                subMenuLink.href = subMenu.link;
+                subMenuItem.appendChild(subMenuLink);
+                dropdownContent.appendChild(subMenuItem);
+            });
+
+            trigger.addEventListener("click", () => {
+                const isOpen = menuItem.classList.toggle("open");
+                trigger.setAttribute("aria-expanded", String(isOpen));
+            });
+
+            menuItem.appendChild(trigger);
+            menuItem.appendChild(dropdownContent);
         } else {
-            if (menu.subMenus) {
-                menuItem.classList.add('dropdown');
-                const dropdownContent = document.createElement('ul');
-                dropdownContent.classList.add('dropdown-content');
-                menu.subMenus.forEach(subMenu => {
-                    const subMenuItem = document.createElement('li');
-                    const subMenuLink = document.createElement('a');
-                    subMenuLink.textContent = subMenu.title;
-                    subMenuLink.setAttribute('href', subMenu.link);
-                    subMenuItem.appendChild(subMenuLink);
-                    dropdownContent.appendChild(subMenuItem);
-                });
-                menuItem.appendChild(link);
-                menuItem.appendChild(dropdownContent);
-            } else {
-                menuItem.appendChild(link);
-            }
+            const link = document.createElement("a");
+            link.textContent = menu.title;
+            link.href = menu.link || "#";
+            menuItem.appendChild(link);
         }
 
         navLinks.appendChild(menuItem);
     });
 
+    toggle.addEventListener("click", () => {
+        const isOpen = navbar.classList.toggle("menu-open");
+        toggle.setAttribute("aria-expanded", String(isOpen));
+    });
+
+    document.addEventListener("click", event => {
+        if (!navbar.contains(event.target)) {
+            navbar.querySelectorAll(".dropdown.open").forEach(dropdown => {
+                dropdown.classList.remove("open");
+                const trigger = dropdown.querySelector(".dropdown-trigger");
+                if (trigger) {
+                    trigger.setAttribute("aria-expanded", "false");
+                }
+            });
+        }
+    });
+
+    navbar.appendChild(brandLink);
+    navbar.appendChild(toggle);
     navbar.appendChild(navLinks);
-    document.body.appendChild(navbar);
+    shell.appendChild(navbar);
+
+    const mountPoint = document.getElementById("menu") || document.getElementById("navbarContainer");
+    if (mountPoint) {
+        mountPoint.replaceWith(shell);
+    } else {
+        document.body.prepend(shell);
+    }
 }
 
-// Call the function to create the navbar
 createNavbar();

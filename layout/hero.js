@@ -1,26 +1,29 @@
 const heros = [
     {
-        titre: "Ismail Helali Auto-Entrepreneur et Ingénieur en Industries et Supply Chain | Rabat-Maroc.",
-        description: " site web en construction , Je reste a votre disposition pour plus d'informations ."
+        titre: "Ismail Helali",
+        description: "Entrepreneuriat, contenu et accompagnement autour de projets utiles et concrets."
     }
 ];
 
-// Fonction pour afficher les services
 function afficherhero() {
-    const container = document.getElementById('hero');
+    const container = document.getElementById("hero");
+    if (!container || container.children.length > 0) {
+        return;
+    }
+
     heros.forEach(hero => {
-        const serviceElement = document.createElement('div');
-        serviceElement.innerHTML = `
+        const heroElement = document.createElement("div");
+        heroElement.className = "container hero-content";
+        heroElement.innerHTML = `
+            <p class="eyebrow">Presentation</p>
             <h2>${hero.titre}</h2>
-            <br>
-            <div class="inline">
-            <a href="#contact">Prendre Contact</a>
-            <h3>${hero.description}</h3>
+            <p>${hero.description}</p>
+            <div class="hero-actions">
+                <a href="#contact" class="cta-button">Prendre contact</a>
             </div>
         `;
-        container.appendChild(serviceElement);
+        container.appendChild(heroElement);
     });
 }
 
-// Appel de la fonction pour afficher les services
 afficherhero();

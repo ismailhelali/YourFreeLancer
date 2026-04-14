@@ -1,15 +1,97 @@
-/* Réinitialiser la marge et le rembourrage par défaut */
-* { 
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+:root {
+    --bg: #0a0f0d;
+    --bg-soft: #101917;
+    --panel: rgba(16, 25, 23, 0.82);
+    --panel-strong: #13211d;
+    --text: #f3efe5;
+    --muted: #bdd1c3;
+    --line: rgba(201, 223, 206, 0.18);
+    --accent: #d9a441;
+    --accent-strong: #f0bf5f;
+    --shadow: 0 24px 70px rgba(0, 0, 0, 0.28);
+    --radius-lg: 28px;
+    --radius-md: 18px;
+    --content-width: 1180px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: Georgia, "Times New Roman", serif;
     line-height: 1.6;
-    background-color: #000000;
-    color: #FFFFFF;
-    min-height: 100vh; /* Ensure full viewport height */
+    background:
+        radial-gradient(circle at top left, rgba(217, 164, 65, 0.18), transparent 28%),
+        radial-gradient(circle at 85% 15%, rgba(130, 161, 121, 0.18), transparent 24%),
+        linear-gradient(180deg, #08100e 0%, #0b1411 44%, #08100e 100%);
+    color: var(--text);
+    min-height: 100vh;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    color: inherit;
+}
+
+main {
+    overflow: hidden;
+}
+
+.container {
+    width: min(calc(100% - 2rem), var(--content-width));
+    margin: 0 auto;
+}
+
+.section-kicker,
+.eyebrow {
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+    font-size: 0.78rem;
+    color: var(--accent-strong);
+}
+
+.section-heading,
+.profile-layout,
+.contact-grid {
+    position: relative;
+    z-index: 1;
+}
+
+.section-heading h2,
+.profile-copy h2,
+.contact-copy h2 {
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    line-height: 1.1;
+    margin: 0.85rem 0 1rem;
+}
+
+.section-heading p,
+.profile-copy p,
+.contact-copy p,
+.service-card p {
+    color: var(--muted);
+}
+
+.footer {
+    padding: 2rem 0 3rem;
+    color: rgba(243, 239, 229, 0.72);
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: min(calc(100% - 1.25rem), var(--content-width));
+    }
 }
