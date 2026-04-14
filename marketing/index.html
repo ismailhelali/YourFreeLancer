@@ -3,243 +3,180 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Service Marketing </title>
+    <meta
+        name="description"
+        content="Service marketing d'Ismail Helali: positionnement, strategie de contenu, plan d'action et accompagnement marketing."
+    >
+    <title>Service Marketing | Ismail Helali</title>
     <link rel="icon" href="/pictures/ismailhelali-logo.png" type="image/png">
 
-    <link rel="stylesheet" href="/layout/menu.css"> 
-
-<style>
-
-    /* Réinitialiser la marge et le rembourrage par défaut */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* Styles globaux */
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.6;
-    background-color: #000000;
-    color: #FFFFFF;
-}
-
-.container {
-    width: 90%;
-    margin: 0 auto;
-    max-width: 1200px;
-}
-
-
-/* Style de la section Hero */
-.hero {
-    background-image: url('background.jpg');
-    background-size: cover;
-    background-position: center;
-    padding: 200px 0;
-    text-align: center;
-}
-
-.hero h1 {
-    font-size: 4.1rem;
-    margin-bottom: 20px;
-}
-
-.hero p {
-    font-size: 1.5rem;
-}
-
-/* Adjust font sizes for small devices */
-@media only screen and (max-width: 768px) {
-    .hero h1 {
-        font-size: 3rem; /* Adjust font size for h1 on smaller devices */
-    }
-
-    .hero p {
-        font-size: 1.2rem; /* Adjust font size for p on smaller devices */
-    }
-}
-    
-
-/* Style de la section Services */
-.services {
-    background-color: #1F1F1F;
-    color: #FFFFFF;
-    padding: 100px 0;
-    text-align: center;
-}
-
-.service-cards {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin-top: 40px;
-}
-
-.service-card {
-    width: 300px;
-    padding: 30px;
-    margin: 20px;
-    background-color: #333333;
-    border-radius: 20px;
-    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.1);
-    transition: transform 0.3s ease;
-}
-
-.service-card:hover {
-    transform: scale(1.05);
-}
-
-.service-card h3 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-    color: #FFFFFF;
-}
-
-/* Style de la section Contact */
-.contact {
-    background-color: #000000;
-    color: #FFFFFF;
-    padding: 100px 0;
-    text-align: center;
-}
-
-.contact-form input,
-.contact-form textarea {
-    width: 100%;
-    margin-bottom: 20px;
-    padding: 15px;
-    border: none;
-    border-radius: 5px;
-    background-color: #333333;
-    color: #FFFFFF;
-}
-
-.contact-form textarea {
-    resize: none;
-    height: 150px;
-}
-
-.contact-form button {
-    padding: 15px 30px;
-    border: none;
-    border-radius: 5px;
-    background-color: #FFD700;
-    color: #333333;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.contact-form button:hover {
-    background-color: #FFEC8B;
-}
-
-/* Style du pied de page */
-.footer {
-    background-color: #1F1F1F;
-    color: #FFFFFF;
-    padding: 20px 0;
-    text-align: center;
-
-}
-/* Button Styles */
-.cta-button {
-    display: inline-block;
-    padding: 12px 24px;
-    font-size: 18px;
-    font-weight: bold;
-    color: #ffffff;
-    text-decoration: none;
-    border: none;
-    border-radius: 50px;
-    background-color: #ffcc00; /* Yellow color */
-    background-image: linear-gradient(to right, #ffcc00, #ff9933); /* Gradient */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Box shadow */
-    transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s;
-}
-
-.cta-button:hover {
-    background-color: #ffdb4d; /* Lighter yellow on hover */
-    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); /* Slightly larger shadow on hover */
-    transform: translateY(-2px); /* Move button up on hover */
-}
-
-.cta-button:active {
-    transform: translateY(0); /* Reset position on click */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Small shadow on click */
-}
-
-
-</style>
+    <link rel="stylesheet" href="/layout/body.css">
+    <link rel="stylesheet" href="/layout/hero.css">
+    <link rel="stylesheet" href="/layout/menu.css">
+    <link rel="stylesheet" href="/layout/contact.css">
+    <link rel="stylesheet" href="/marketing/marketing.css">
 </head>
 <body>
-    <div id="navbarContainer"></div>
+    <div id="menu"></div>
 
-
-
-
-    <header id="hero" class="hero">
-        <div class="container">
-            <h1>Transformez votre vision en succès commercial avec notre expertise en marketing stratégique sur mesure.</h1>
-            <p>Découvrez comment nous pouvons aider votre entreprise avec des solutions de marketing stratégique.</p>
-         <br>
-            <a href="#contact" class="cta-button">Prendre Rendezvous</a>
-
-        </div>
-    </header>
-
-    <section id="services" class="services">
-        <div class="container">
-            <h2>Nos Services Marketing</h2>
-            <div class="service-cards">
-                   <div class="service-card">
-                    <h3>Marketing de class Mondiale</h3>
-                   <p>Nous proposons des conseils et une assistance pour les études de marché, le benchmarking et le marketing stratégique.</p>
-
+    <main>
+        <header class="hero marketing-hero">
+            <div class="container hero-content">
+                <p class="eyebrow">Marketing Strategique</p>
+                <h1>Un marketing plus clair, plus credible et plus utile pour votre croissance.</h1>
+                <p class="hero-lead">
+                    Nous aidons les petites entreprises et les auto-entrepreneurs a mieux
+                    presenter leur offre, trouver leur bon message et transformer leurs idees
+                    en actions marketing coherentes.
+                </p>
+                <div class="hero-actions">
+                    <a href="#contact" class="cta-button">Prendre rendez-vous</a>
+                    <a href="#marketing-offer" class="secondary-link">Explorer l'offre</a>
                 </div>
-                 
-                <!-- Répéter pour les autres services -->
+                <ul class="hero-highlights" aria-label="Points forts du service marketing">
+                    <li>Positionnement plus lisible</li>
+                    <li>Plan d'action adapte a vos moyens</li>
+                    <li>Contenus et messages plus convaincants</li>
+                </ul>
             </div>
-        </div>
-    </section>
+        </header>
 
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2>Contactez-nous</h2>
-            <form class="contact-form">
-                <input type="text" placeholder="Nom">
-                <input type="email" placeholder="Email">
-                <textarea placeholder="Message"></textarea>
-                <button type="submit">Envoyer le Message</button>
-            </form>
-        </div>
-    </section>
+        <section id="marketing-offer" class="marketing-overview">
+            <div class="container overview-grid">
+                <div class="overview-copy">
+                    <p class="section-kicker">Approche</p>
+                    <h2>Nous partons de votre realite, pas d'un modele standard.</h2>
+                    <p>
+                        Le marketing devient utile quand il aide a mieux expliquer votre valeur,
+                        structurer vos priorites et creer des actions que vous pouvez vraiment
+                        appliquer.
+                    </p>
+                </div>
+                <div class="overview-panel">
+                    <div class="panel-metric">
+                        <strong>3</strong>
+                        <span>etapes clefs: clarifier, structurer, deployer</span>
+                    </div>
+                    <div class="panel-metric">
+                        <strong>1</strong>
+                        <span>discours coherent sur tous vos supports</span>
+                    </div>
+                    <div class="panel-metric">
+                        <strong>0</strong>
+                        <span>actions inutiles ou deconnectees de votre activite</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="marketing-services">
+            <div class="container section-heading">
+                <p class="section-kicker">Prestations</p>
+                <h2>Ce que le service marketing peut concretement apporter.</h2>
+                <p>
+                    L'accompagnement combine lecture strategique, production de messages et aide
+                    a la mise en oeuvre pour faire gagner du temps et de la clarte.
+                </p>
+            </div>
+
+            <div class="container marketing-cards">
+                <article class="marketing-card">
+                    <p class="service-tag">01 • Positionnement</p>
+                    <h3>Clarifier votre offre</h3>
+                    <p>
+                        Revoir votre promesse, votre cible et la facon dont vous presentez votre
+                        activite pour devenir plus comprehensible et plus distinctif.
+                    </p>
+                </article>
+                <article class="marketing-card">
+                    <p class="service-tag">02 • Strategie</p>
+                    <h3>Construire un plan d'action realiste</h3>
+                    <p>
+                        Prioriser les canaux, les contenus et les actions qui ont le plus de sens
+                        selon votre stade, vos moyens et vos objectifs.
+                    </p>
+                </article>
+                <article class="marketing-card">
+                    <p class="service-tag">03 • Contenu</p>
+                    <h3>Renforcer vos messages</h3>
+                    <p>
+                        Ameliorer vos textes, vos presentations et vos prises de parole pour
+                        transmettre plus clairement votre valeur.
+                    </p>
+                </article>
+                <article class="marketing-card">
+                    <p class="service-tag">04 • Analyse</p>
+                    <h3>Etudes et benchmark</h3>
+                    <p>
+                        Observer le marche, les concurrents et les attentes clients pour faire des
+                        choix plus solides et mieux argumentes.
+                    </p>
+                </article>
+            </div>
+        </section>
+
+        <section class="marketing-process">
+            <div class="container section-heading">
+                <p class="section-kicker">Processus</p>
+                <h2>Une methode simple pour aller du flou a l'action.</h2>
+            </div>
+
+            <div class="container process-steps">
+                <article class="process-step">
+                    <span>01</span>
+                    <h3>Diagnostic</h3>
+                    <p>Comprendre la situation actuelle, les blocages et les opportunites prioritaires.</p>
+                </article>
+                <article class="process-step">
+                    <span>02</span>
+                    <h3>Structuration</h3>
+                    <p>Definir le bon message, les bons axes et un cadre marketing coherent.</p>
+                </article>
+                <article class="process-step">
+                    <span>03</span>
+                    <h3>Activation</h3>
+                    <p>Mettre en place un plan d'action concret avec des priorites lisibles.</p>
+                </article>
+            </div>
+        </section>
+
+        <section id="contact" class="contact-section">
+            <div class="container contact-grid">
+                <div class="contact-copy">
+                    <p class="section-kicker">Contact</p>
+                    <h2>Parlons de votre besoin marketing.</h2>
+                    <p>
+                        Partagez votre contexte, votre objectif ou votre difficulte actuelle.
+                        Nous pourrons identifier les priorites et voir comment construire une
+                        intervention utile.
+                    </p>
+                </div>
+                <form method="post" action="" name="contact-form" id="contactform" class="contact-form"></form>
+            </div>
+        </section>
+    </main>
 
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2024 Ismail Helali. Tous droits réservés.</p>
+            <p>&copy; 2026 Ismail Helali. Tous droits reserves.</p>
         </div>
     </footer>
-    
+
     <script src="/layout/menu.js"></script>
-
-
-
+    <script src="/layout/contact.js"></script>
+    <script src="/layout/sendform.js"></script>
     <script>
-// Ajouter le défilement fluide aux liens de navigation
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const target = document.querySelector(this.getAttribute('href'));
+                if (!target) {
+                    return;
+                }
 
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
+                e.preventDefault();
+                target.scrollIntoView({ behavior: 'smooth' });
+            });
         });
-    });
-});
-
-        
     </script>
 </body>
 </html>
-

@@ -1,15 +1,10 @@
 const menus = [
     {
-        title: "Lezajal Podcast",
-        link: "/podcast"
-    },
-    {
         title: "Services",
         link: "#",
         subMenus: [
             { title: "Accompagnement", link: "/Diagnostic_accompagnement" },
-            { title: "Marketing", link: "/marketing" },
-            { title: "Photography", link: "/photography" }
+            { title: "Marketing", link: "/marketing" }
         ]
     },
     {

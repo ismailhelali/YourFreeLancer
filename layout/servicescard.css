@@ -13,6 +13,63 @@
     pointer-events: none;
 }
 
+.services-intro {
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+    gap: 1.2rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.services-lead-card,
+.metric-card {
+    border: 1px solid var(--line);
+    box-shadow: var(--shadow);
+}
+
+.services-lead-card {
+    padding: 1.7rem;
+    border-radius: var(--radius-lg);
+    background: linear-gradient(180deg, rgba(20, 32, 28, 0.95), rgba(12, 20, 18, 0.88));
+}
+
+.services-lead-label,
+.service-tag {
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--accent-strong);
+}
+
+.services-lead-card h3 {
+    margin: 0.7rem 0 0.85rem;
+    font-size: clamp(1.5rem, 2.8vw, 2.35rem);
+    line-height: 1.08;
+}
+
+.services-metrics {
+    display: grid;
+    gap: 0.9rem;
+}
+
+.metric-card {
+    display: grid;
+    gap: 0.35rem;
+    padding: 1.2rem;
+    border-radius: 22px;
+    background: rgba(13, 22, 19, 0.86);
+}
+
+.metric-card strong {
+    font-size: 2rem;
+    line-height: 1;
+    color: var(--text);
+}
+
+.metric-card span {
+    color: var(--muted);
+}
+
 .service-cards {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -65,7 +122,24 @@
     margin-bottom: 0.85rem;
 }
 
+.service-tag {
+    margin-bottom: 0.55rem;
+    font-size: 0.72rem;
+}
+
+.service-note {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(243, 239, 229, 0.08);
+    font-size: 0.96rem;
+    color: var(--text);
+}
+
 @media (max-width: 900px) {
+    .services-intro {
+        grid-template-columns: 1fr;
+    }
+
     .service-cards {
         grid-template-columns: 1fr;
     }

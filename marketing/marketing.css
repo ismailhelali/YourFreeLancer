@@ -1,0 +1,133 @@
+.marketing-hero {
+    background-image:
+        linear-gradient(90deg, rgba(5, 10, 9, 0.9) 0%, rgba(5, 10, 9, 0.58) 46%, rgba(5, 10, 9, 0.28) 100%),
+        linear-gradient(135deg, rgba(217, 164, 65, 0.08), rgba(130, 161, 121, 0.08)),
+        url('/pictures/hero-niklas-jeromin.jpg');
+}
+
+.marketing-overview,
+.marketing-services,
+.marketing-process {
+    padding: 0 0 6rem;
+}
+
+.overview-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+    gap: 1.4rem;
+}
+
+.overview-copy,
+.overview-panel,
+.marketing-card,
+.process-step {
+    border: 1px solid var(--line);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow);
+}
+
+.overview-copy,
+.overview-panel {
+    padding: 2rem;
+    background: var(--panel);
+}
+
+.overview-copy h2 {
+    font-size: clamp(2rem, 4vw, 3.3rem);
+    line-height: 1.08;
+    margin: 0.9rem 0 1rem;
+}
+
+.overview-copy p {
+    color: var(--muted);
+}
+
+.overview-panel {
+    display: grid;
+    gap: 1rem;
+    align-content: start;
+}
+
+.panel-metric {
+    padding: 1.15rem 1.2rem;
+    border-radius: 22px;
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.panel-metric strong {
+    display: block;
+    margin-bottom: 0.35rem;
+    font-size: 2rem;
+    color: var(--text);
+}
+
+.panel-metric span {
+    color: var(--muted);
+}
+
+.marketing-cards {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.2rem;
+    margin-top: 2.25rem;
+}
+
+.marketing-card {
+    padding: 1.5rem;
+    background: linear-gradient(180deg, rgba(19, 33, 29, 0.94), rgba(12, 22, 20, 0.86));
+}
+
+.marketing-card h3 {
+    font-size: 1.7rem;
+    line-height: 1.12;
+    margin: 0.55rem 0 0.85rem;
+}
+
+.marketing-card p:last-child,
+.process-step p {
+    color: var(--muted);
+}
+
+.process-steps {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.2rem;
+}
+
+.process-step {
+    padding: 1.5rem;
+    background: rgba(16, 25, 23, 0.7);
+}
+
+.process-step span {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.7rem;
+    height: 2.7rem;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+    background: rgba(240, 191, 95, 0.12);
+    color: var(--accent-strong);
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+}
+
+.process-step h3 {
+    font-size: 1.45rem;
+    margin-bottom: 0.65rem;
+}
+
+@media (max-width: 900px) {
+    .overview-grid,
+    .marketing-cards,
+    .process-steps {
+        grid-template-columns: 1fr;
+    }
+
+    .overview-copy,
+    .overview-panel,
+    .marketing-card,
+    .process-step {
+        padding: 1.35rem;
+    }
+}
